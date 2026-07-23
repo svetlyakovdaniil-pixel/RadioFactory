@@ -1,56 +1,67 @@
-# FFmpeg Specification (Update 17A)
+# FFmpeg Specification (Update 17B)
 
-## 1. Purpose
+## 7. Command Construction
 
-FFmpeg is the media encoder used by Worker.
+Arguments are built from validated configuration only.
 
-It is an infrastructure component only.
+Rules:
 
----
-
-## 2. Responsibilities
-
-- encode media
-- transmit RTMP
-- report process status
-- expose exit codes
-
-Business logic is outside FFmpeg.
+- deterministic ordering
+- validated paths
+- explicit codecs
+- explicit bitrate
+- explicit reconnect settings
 
 ---
 
-## 3. Lifecycle
+## 8. Process Monitoring
 
-Created
-→ Starting
-→ Running
-→ Restarting
-→ Stopping
-→ Stopped
+Worker continuously monitors:
 
-Only one encoder process may exist.
+- stdout
+- stderr
+- exit code
+- CPU usage
+- memory usage
+- process lifetime
 
----
-
-## 4. Process Ownership
-
-Worker owns the FFmpeg process.
-
-No other component may start or stop FFmpeg directly.
+Unexpected termination generates a domain event.
 
 ---
 
-## 5. Command Line
+## 9. Exit Codes
 
-Command generation is deterministic.
+Exit codes are classified into:
 
-Arguments are validated before execution.
+- Success
+- Configuration Failure
+- Input Failure
+- Network Failure
+- Encoder Failure
+- Unknown Failure
 
 ---
 
-## 6. Invariants
+## 10. Restart Policy
 
-- one process
-- deterministic startup
-- reproducible command line
-- no business state
+Transient failures use exponential backoff.
+
+Permanent configuration errors are never retried.
+
+Restart history is persisted.
+
+---
+
+## 11. Performance Requirements
+
+Startup time must be measurable.
+
+Encoding latency and resource usage are exported as metrics.
+
+---
+
+## 12. Constraints
+
+FFmpeg never owns business state.
+
+Process replacement must not affect domain logic.

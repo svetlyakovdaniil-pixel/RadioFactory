@@ -1,13 +1,13 @@
 # CHANGELOG
 
-## Documentation Update 17A
+## Documentation Update 17B
 
-Started comprehensive FFmpeg specification.
+Expanded FFmpeg specification.
 
 Added:
-- purpose
-- responsibilities
-- lifecycle
-- process ownership
-- command line
-- invariants
+- command construction
+- process monitoring
+- exit code model
+- restart policy
+- performance requirements
+- implementation constraints

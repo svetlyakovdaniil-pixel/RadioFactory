@@ -1,5 +1,5 @@
 # CHANGELOG
 
-## Knowledge Base 02
+## Knowledge Base 03
 
-Added Component Catalog.
+Added Live Worker Lifecycle.

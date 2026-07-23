@@ -1,61 +1,54 @@
-# Architecture Decisions (Update 27B)
+# Architecture Decisions (Update 27C)
 
-## 7. Decision Process
+## 13. Architecture Audit
 
-Every ADR follows a defined process:
+Architectural reviews periodically verify that implementation remains aligned with accepted ADRs.
 
-- identify the problem
-- evaluate alternatives
-- document trade-offs
-- approve the decision
-- record consequences
+Audit findings are documented and traceable.
 
 ---
 
-## 8. Decision Criteria
+## 14. Architecture Evolution
 
-Alternatives are evaluated using:
+Architecture evolves through new ADRs rather than modifying accepted decisions.
+
+Superseded ADRs remain part of project history.
+
+---
+
+## 15. Risk Management
+
+Each significant decision documents:
+
+- identified risks
+- mitigations
+- accepted trade-offs
+- review triggers
+
+---
+
+## 16. Architecture Quality
+
+Architecture quality is evaluated using:
 
 - maintainability
 - reliability
 - scalability
-- simplicity
-- operational impact
+- operability
+- consistency
 
 ---
 
-## 9. ADR Status
+## 17. Governance Scalability
 
-Supported statuses:
+The ADR process supports multiple teams and parallel initiatives.
 
-- proposed
-- accepted
-- superseded
-- deprecated
-- rejected
-
-Status changes are explicitly recorded.
+Decision ownership remains explicit.
 
 ---
 
-## 10. Review
+## 18. Architectural Constraints
 
-Architectural decisions undergo technical review before acceptance.
+ADRs define architectural intent without replacing implementation.
 
-Review comments remain traceable.
-
----
-
-## 11. Dependencies
-
-ADRs may depend on earlier decisions.
-
-Dependencies are explicitly documented.
-
----
-
-## 12. Traceability
-
-Every implementation references applicable ADRs where appropriate.
-
-Architectural intent remains visible throughout the project.
+Architecture Decisions Version 1 specification complete.

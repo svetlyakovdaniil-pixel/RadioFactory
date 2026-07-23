@@ -1,13 +1,13 @@
 # CHANGELOG
 
-## Documentation Update 27B
+## Documentation Update 27C
 
-Expanded Architecture Decisions specification.
+Completed Architecture Decisions Version 1 specification.
 
 Added:
-- decision process
-- evaluation criteria
-- ADR status model
-- review process
-- dependencies
-- traceability
+- architecture audit
+- architecture evolution
+- risk management
+- architecture quality
+- governance scalability
+- architectural constraints

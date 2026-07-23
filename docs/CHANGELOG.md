@@ -1,13 +1,13 @@
 # CHANGELOG
 
-## Documentation Update 33C
+## Documentation Update 34A
 
-Completed Security Model Version 1 specification.
+Started API Guidelines Version 1.
 
 Added:
-- security incident management
-- security risk management
-- security audit
-- compliance
-- continuous improvement
-- final constraints
+- purpose
+- responsibilities
+- non-responsibilities
+- scope
+- API principles
+- invariants

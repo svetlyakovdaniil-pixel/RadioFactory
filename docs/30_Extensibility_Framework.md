@@ -1,47 +1,47 @@
-# Extensibility Framework (Update 37B)
+# Extensibility Framework (Update 37C)
 
-## 7. Extension Points
+## 13. Extension Lifecycle
 
-Extension points are explicitly defined and documented.
+Every extension follows documented phases including introduction, maintenance, deprecation and retirement.
 
-Each extension point specifies supported capabilities and constraints.
-
----
-
-## 8. Module Contracts
-
-Modules communicate through stable, versioned contracts.
-
-Internal implementation details remain encapsulated.
+Lifecycle transitions are versioned and communicated.
 
 ---
 
-## 9. Plugin Loading
+## 14. Extension Audit
 
-Plugin discovery and loading follow deterministic procedures.
+Extensions are periodically reviewed for compliance, compatibility, quality and operational reliability.
 
-Loading failures are isolated and reported.
-
----
-
-## 10. Dependency Management
-
-Dependencies between modules are explicit and minimized.
-
-Circular dependencies are prohibited.
+Audit findings are tracked until resolved.
 
 ---
 
-## 11. Component Isolation
+## 15. Risk Management
 
-Extensions operate within defined boundaries.
+Extension-related risks are evaluated before adoption and before significant architectural changes.
 
-Failures in one extension should not compromise unrelated components.
+Mitigation plans are documented.
 
 ---
 
-## 12. Compatibility
+## 16. Continuous Improvement
 
-Extensions declare supported framework versions and compatibility expectations.
+The extensibility framework evolves through architectural reviews, implementation feedback and operational experience.
 
-Breaking changes require versioned contracts.
+All framework improvements remain version-controlled.
+
+---
+
+## 17. Backward Compatibility
+
+Supported extensions should continue functioning across framework updates whenever practical.
+
+Breaking changes require versioned extension contracts and migration guidance.
+
+---
+
+## 18. Final Constraints
+
+This framework defines conceptual standards for extensibility without prescribing implementation technologies.
+
+Extensibility Framework Version 1 specification complete.

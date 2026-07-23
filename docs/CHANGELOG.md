@@ -1,13 +1,13 @@
 # CHANGELOG
 
-## Documentation Update 16B
+## Documentation Update 16C
 
-Expanded YouTube Provider specification.
+Completed YouTube Provider Version 1 specification.
 
 Added:
-- broadcast creation workflow
-- resource recovery
-- error normalization
-- retry policy
-- idempotency
-- adapter requirements
+- live monitoring
+- completion workflow
+- consistency rules
+- observability
+- security
+- implementation constraints

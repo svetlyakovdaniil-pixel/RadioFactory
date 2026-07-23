@@ -1,12 +1,13 @@
 # CHANGELOG
 
-## Documentation Update 18A
+## Documentation Update 18B
 
-Started comprehensive Event Bus specification.
+Expanded Event Bus specification.
 
 Added:
-- purpose
-- responsibilities
-- event contract
-- delivery model
-- invariants
+- delivery guarantees
+- subscriber model
+- idempotency
+- dead letter strategy
+- replay
+- error handling

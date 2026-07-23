@@ -1,60 +1,61 @@
-# Event Bus Specification (Update 18A)
+# Event Bus Specification (Update 18B)
 
-## 1. Purpose
+## 7. Delivery Guarantees
 
-The Event Bus delivers domain events between components.
+Supported guarantees:
 
-It provides transport only and contains no business logic.
+- at-most-once
+- at-least-once
+- exactly-once (logical, via idempotency)
 
----
-
-## 2. Responsibilities
-
-- publish events
-- deliver events
-- route subscribers
-- preserve event metadata
-- report delivery results
+The transport implementation defines the physical guarantee.
 
 ---
 
-## 3. Non-Responsibilities
+## 8. Subscriber Model
 
-The Event Bus never:
+Subscribers:
 
-- makes business decisions
-- modifies event payloads
-- retries business operations
-- stores domain state
+- register interest in event types
+- acknowledge completed processing
+- remain isolated from publishers
 
----
-
-## 4. Event Contract
-
-Every event contains:
-
-- eventId
-- eventType
-- timestamp
-- correlationId
-- source
-- payload
-
-Events are immutable.
+Subscriber failures never corrupt event payloads.
 
 ---
 
-## 5. Delivery Model
+## 9. Idempotency
 
-Events are published after successful business operations.
+Every event carries a unique eventId.
 
-Subscribers receive completed facts only.
+Consumers must safely ignore duplicate deliveries.
+
+Processing the same event twice must produce the same final state.
 
 ---
 
-## 6. Invariants
+## 10. Dead Letter Strategy
 
-- immutable events
-- deterministic routing
-- ordered delivery per publisher
-- transport independent of domain
+Events that repeatedly fail processing are moved to a Dead Letter Queue.
+
+Original payload and metadata are preserved.
+
+---
+
+## 11. Replay
+
+Replay is supported using immutable stored events.
+
+Replay never changes historical event content.
+
+---
+
+## 12. Error Handling
+
+Delivery errors are classified as:
+
+- transient
+- permanent
+- configuration
+
+Recovery policy depends on the classification.

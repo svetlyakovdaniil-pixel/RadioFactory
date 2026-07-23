@@ -1,13 +1,13 @@
 # CHANGELOG
 
-## Documentation Update 30B
+## Documentation Update 30C
 
-Expanded Testing Strategy.
+Completed Testing Strategy Version 1 specification.
 
 Added:
-- testing levels
-- test environments
-- test data
-- automation
-- regression testing
-- coverage
+- test quality
+- defect management
+- risk-based testing
+- continuous verification
+- testing audit
+- final constraints

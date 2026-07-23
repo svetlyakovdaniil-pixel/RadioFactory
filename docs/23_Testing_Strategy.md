@@ -1,55 +1,52 @@
-# Testing Strategy (Update 30B)
+# Testing Strategy (Update 30C)
 
-## 7. Testing Levels
+## 13. Test Quality
 
-Testing is organized into:
+Tests should be:
 
-- unit testing
-- integration testing
-- system testing
-- end-to-end testing
+- deterministic
+- maintainable
+- independent
+- understandable
 
-Each level validates different aspects of system quality.
-
----
-
-## 8. Test Environments
-
-Testing environments should resemble production where practical.
-
-Environment differences are documented.
+Flaky tests should be corrected or removed.
 
 ---
 
-## 9. Test Data
+## 14. Defect Management
 
-Test data must be:
+Defects are tracked, prioritized and linked to affected components.
 
-- reproducible
-- isolated
-- versioned where appropriate
-- safe for non-production use
+Verification confirms resolution before closure.
 
 ---
 
-## 10. Automation
+## 15. Risk-Based Testing
 
-Automated tests are preferred for repeatable verification.
+Testing effort is proportional to implementation risk.
 
-Manual testing complements automation where necessary.
-
----
-
-## 11. Regression Testing
-
-Regression testing verifies that existing functionality remains unaffected by changes.
-
-Critical workflows receive priority.
+Critical functionality receives the highest verification priority.
 
 ---
 
-## 12. Coverage
+## 16. Continuous Verification
 
-Coverage metrics are monitored to identify untested areas.
+Testing is integrated into the continuous development workflow.
 
-Coverage is used as a quality indicator rather than the sole success metric.
+Failures are investigated before release progression.
+
+---
+
+## 17. Testing Audit
+
+Testing practices are periodically reviewed to ensure continued effectiveness and consistency.
+
+Audit findings are documented.
+
+---
+
+## 18. Final Constraints
+
+The Testing Strategy defines quality verification practices but does not replace implementation, operational or architectural documentation.
+
+Testing Strategy Version 1 specification complete.

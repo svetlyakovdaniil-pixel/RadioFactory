@@ -1,13 +1,13 @@
 # CHANGELOG
 
-## Documentation Update 32C
+## Documentation Update 33A
 
-Completed Operations Guide Version 1 specification.
+Started Security Model Version 1.
 
 Added:
-- incident management
-- planned maintenance
-- operational risk management
-- operations audit
-- continuous improvement
-- final constraints
+- purpose
+- responsibilities
+- non-responsibilities
+- scope
+- security principles
+- invariants

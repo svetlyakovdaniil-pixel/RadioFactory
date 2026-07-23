@@ -1,13 +1,13 @@
 # CHANGELOG
 
-## Documentation Update 14C
+## Documentation Update 15A
 
-Completed Broadcast Version 1 specification.
+Started comprehensive Worker specification.
 
 Added:
-- completion workflow
-- cleanup rules
-- idempotency
-- consistency
-- observability
-- implementation requirements
+- purpose
+- responsibilities
+- startup
+- main loop
+- invariants
+- domain events

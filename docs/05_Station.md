@@ -1,92 +1,53 @@
-# Station Specification (Update 13C)
+# Station Specification (Update 13D)
 
-# 15. Recovery Workflow
+## 21. Timeout Matrix
 
-Recovery is initiated only after Station determines that automatic restoration is
-allowed by the current UserIntent.
+| Timer | Purpose | Expiration Action |
+|---|---|---|
+| Startup | Prevent endless startup | Recovery |
+| Stream Ready | Wait for stream_ready | Abort startup |
+| Health Check | Verify runtime | Diagnostics |
+| Recovery | Limit recovery time | Failed state |
+| Graceful Stop | Clean shutdown | Force Stop escalation |
 
-Sequence:
+## 22. Logging Requirements
 
-1. Detect failure.
-2. Freeze runtime state.
-3. Verify active Broadcast.
-4. Classify failure.
-5. Decide recovery strategy.
-6. Restore playback when applicable.
-7. Publish RecoveryCompleted or StationFailed.
+Each lifecycle transition produces a structured log with:
 
-Recovery must never create a second active Broadcast.
+- timestamp
+- stationId
+- broadcastId
+- previousState
+- newState
+- commandId
+- correlationId
+- severity
+- message
 
----
+## 23. Extended Edge Cases
 
-# 16. Workspace Interaction
+- YouTube Broadcast deleted externally.
+- RTMP disconnected.
+- Restart during Cleanup.
+- Media disappears while Running.
 
-Workspace may:
+Each case must preserve invariants and avoid duplicate Broadcasts.
 
-- request Start;
-- request Stop;
-- enqueue lifecycle commands;
-- provide shared configuration.
+## 24. Validation Checklist
 
-Workspace must never modify Station runtime state directly.
+- No duplicate Broadcasts
+- Cleanup always runs
+- Commands are idempotent
+- Recovery respects UserIntent
+- Runtime reconstructed after restart
+- Events emitted once
+- Structured logs generated
+- Dashboard displays confirmed state only
 
----
+## 25. Design Principles
 
-# 17. Dashboard Interaction
+Station decisions are deterministic.
+Business rules are isolated from infrastructure.
+Infrastructure failures must not corrupt business state.
 
-Dashboard is an observer.
-
-Dashboard may:
-- send commands through Backend;
-- subscribe to Station events.
-
-Dashboard must never infer Station state locally.
-
----
-
-# 18. Sequence: Normal Stop
-
-User
- ↓
-Dashboard
- ↓
-Backend
- ↓
-Workspace
- ↓
-Station
- ↓
-Worker stops encoder
- ↓
-Broadcast finalized
- ↓
-Cleanup
- ↓
-Idle
-
----
-
-# 19. Forbidden Operations
-
-Station must never:
-
-- access another Station's runtime;
-- bypass Cleanup;
-- modify Pending LIVE Package;
-- publish fake events;
-- ignore explicit Stop requests;
-- start a second Broadcast while one is active.
-
----
-
-# 20. Developer Guidelines
-
-When changing Station logic:
-
-- preserve all invariants;
-- keep commands idempotent;
-- prefer events over direct coupling;
-- isolate infrastructure from business rules;
-- document every new lifecycle state.
-
-This file replaces the previous version and extends the Station specification.
+End of Version 1.

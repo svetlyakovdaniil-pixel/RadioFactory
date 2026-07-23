@@ -1,12 +1,12 @@
 # CHANGELOG
 
-## Documentation Update 13C
+## Documentation Update 13D
 
-Expanded Station specification:
+Completed first full Station specification.
 
-- recovery workflow
-- Workspace interaction
-- Dashboard interaction
-- normal stop sequence
-- forbidden operations
-- developer guidelines
+Added:
+- timeout matrix
+- logging requirements
+- extended edge cases
+- validation checklist
+- design principles

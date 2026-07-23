@@ -1,13 +1,12 @@
 # CHANGELOG
 
-## Documentation Update 17C
+## Documentation Update 18A
 
-Completed FFmpeg Version 1 specification.
+Started comprehensive Event Bus specification.
 
 Added:
-- graceful shutdown
-- Worker interaction
-- observability
-- diagnostics
-- security
-- architectural constraints
+- purpose
+- responsibilities
+- event contract
+- delivery model
+- invariants

@@ -1,12 +1,13 @@
 # CHANGELOG
 
-## Documentation Update 27A
+## Documentation Update 27B
 
-Started comprehensive Architecture Decisions specification.
+Expanded Architecture Decisions specification.
 
 Added:
-- purpose
-- responsibilities
-- ADR structure
-- lifecycle
-- invariants
+- decision process
+- evaluation criteria
+- ADR status model
+- review process
+- dependencies
+- traceability

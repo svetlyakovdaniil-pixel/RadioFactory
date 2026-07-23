@@ -1,63 +1,61 @@
-# Architecture Decisions (Update 27A)
+# Architecture Decisions (Update 27B)
 
-## 1. Purpose
+## 7. Decision Process
 
-Architecture Decisions (ADR) capture significant technical decisions made during RadioFactory development.
+Every ADR follows a defined process:
 
-Each decision documents context, rationale and consequences.
-
----
-
-## 2. Responsibilities
-
-The ADR repository provides:
-
-- architectural history
-- decision rationale
-- implementation guidance
-- traceability
-- long-term consistency
+- identify the problem
+- evaluate alternatives
+- document trade-offs
+- approve the decision
+- record consequences
 
 ---
 
-## 3. Non-Responsibilities
+## 8. Decision Criteria
 
-ADRs do not replace:
+Alternatives are evaluated using:
 
-- source code
-- implementation documentation
-- operational runbooks
-- user documentation
-
----
-
-## 4. ADR Structure
-
-Each ADR contains:
-
-- title
-- status
-- context
-- decision
-- consequences
-- related ADRs
+- maintainability
+- reliability
+- scalability
+- simplicity
+- operational impact
 
 ---
 
-## 5. Lifecycle
+## 9. ADR Status
 
-ADRs are immutable after acceptance.
+Supported statuses:
 
-Superseded decisions reference newer ADRs.
+- proposed
+- accepted
+- superseded
+- deprecated
+- rejected
+
+Status changes are explicitly recorded.
 
 ---
 
-## 6. Invariants
+## 10. Review
 
-Every significant architectural decision must be:
+Architectural decisions undergo technical review before acceptance.
 
-- documented
-- reviewable
-- versioned
-- traceable
-- reproducible
+Review comments remain traceable.
+
+---
+
+## 11. Dependencies
+
+ADRs may depend on earlier decisions.
+
+Dependencies are explicitly documented.
+
+---
+
+## 12. Traceability
+
+Every implementation references applicable ADRs where appropriate.
+
+Architectural intent remains visible throughout the project.

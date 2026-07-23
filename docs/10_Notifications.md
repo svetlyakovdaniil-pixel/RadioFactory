@@ -1,13 +1,13 @@
-# Notifications (Update 07)
+# Notifications (Update 08)
 
-## Event Mapping
+## Delivery Guarantees
 
-Every visible notification originates from a domain event.
+A notification may be delivered to:
 
-Domain Event
-      ↓
-Notification Builder
-      ↓
-Dashboard / Telegram / Logs
+- Dashboard
+- Telegram
+- Event Log
 
-Notification channels never generate business events.
+Failure of one delivery channel must not prevent delivery to the remaining channels.
+
+Duplicate notifications should be avoided using event identifiers.

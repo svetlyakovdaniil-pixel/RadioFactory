@@ -1,11 +1,12 @@
 # CHANGELOG
 
-## Documentation Update 07
+## Documentation Update 08
 
 Added:
-- command model
-- Station state machine
-- failure classification
-- event-to-notification mapping
+- runtime state model
+- concurrency rules
+- broadcast history
+- recovery audit
+- notification delivery guarantees
 
-No functional decisions changed.
+No architectural behaviour changed.

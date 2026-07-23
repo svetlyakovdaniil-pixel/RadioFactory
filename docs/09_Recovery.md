@@ -1,15 +1,14 @@
-# Recovery (Update 07)
+# Recovery (Update 08)
 
-## Failure Classification
+## Recovery Audit
 
-Recoverable:
-- temporary RTMP disconnect
-- temporary network outage
-- transient API failure
+Every recovery attempt creates an audit record containing:
 
-Non-recoverable:
-- invalid credentials
-- deleted YouTube resources
-- corrupted media
+- timestamp
+- trigger
+- previous state
+- resulting state
+- duration
+- outcome
 
-Each class has its own recovery strategy.
+Audit records are immutable and chronological.

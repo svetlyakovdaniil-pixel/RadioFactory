@@ -1,20 +1,24 @@
-# Station (Update 07)
+# Station (Update 08)
 
-## State Machine
+## Runtime State
 
-Idle
-→ Preparing
-→ Starting
-→ Running
-→ Stopping
-→ Cleanup
-→ Idle
+Runtime state exists only while the Station is active.
 
-Failure paths:
+Persistent state:
+- configuration
+- user intent
+- recovery metadata
 
-Preparing → Error
-Starting → Error
-Running → Recovering → Running
-Running → Error
+Runtime state:
+- current track
+- playback position
+- ffmpeg process
+- current Broadcast reference
 
-No transition may skip Cleanup after a normal stop.
+After a restart, runtime state is reconstructed rather than trusted blindly.
+
+## Concurrency Rules
+
+Only one lifecycle operation may execute at a time.
+
+Read operations must never block lifecycle transitions.

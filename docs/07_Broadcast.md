@@ -1,20 +1,15 @@
-# Broadcast (Update 06)
+# Broadcast (Update 08)
 
-## Entity Attributes
+## Broadcast History
 
-Required:
+Each Broadcast records:
 
-- BroadcastId
-- StationId
-- YouTubeBroadcastId
-- StartedAt
-- Deadline
-- State
+- creation time
+- start time
+- finish time
+- recovery attempts
+- terminal state
 
-Optional:
+History is append-only.
 
-- EndedAt
-- FailureReason
-- RecoveryHistory
-
-Broadcast identity never changes during its lifetime.
+Existing history records are never rewritten.

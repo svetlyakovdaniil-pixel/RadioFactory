@@ -1,60 +1,64 @@
-# YouTube Provider Specification (Update 16A)
+# YouTube Provider Specification (Update 16B)
 
-## 1. Purpose
+## 7. Broadcast Creation Workflow
 
-The YouTube Provider isolates all communication with the YouTube API.
+1. Validate request.
+2. Create YouTube Broadcast.
+3. Create Stream.
+4. Bind Stream.
+5. Verify binding.
+6. Return normalized identifiers.
 
-The domain layer never accesses YouTube directly.
-
----
-
-## 2. Responsibilities
-
-- Create Broadcast
-- Create Stream
-- Bind Stream to Broadcast
-- Start monitoring
-- Query runtime state
-- Complete Broadcast
-- Normalize API responses
+Partial failures require compensating cleanup.
 
 ---
 
-## 3. Non-Responsibilities
+## 8. Resource Recovery
 
-The Provider does not:
+Provider restores existing resources using persisted identifiers.
 
-- make business decisions;
-- schedule broadcasts;
-- choose media;
-- control Station lifecycle.
+Missing resources return domain-specific recovery errors.
 
----
-
-## 4. Provider Contract
-
-All operations return normalized domain results.
-
-No raw Google API objects may leave the Provider boundary.
+Provider never silently creates replacements.
 
 ---
 
-## 5. Core Operations
+## 9. Error Normalization
 
-- CreateBroadcast
-- CreateStream
-- BindStream
-- GetBroadcast
-- GetStream
-- DeleteTemporaryResources
-- CompleteBroadcast
+All external errors are mapped into:
+
+- AuthenticationError
+- AuthorizationError
+- QuotaError
+- ValidationError
+- NetworkError
+- TemporaryProviderError
+- PermanentProviderError
+
+No Google-specific exceptions leave the Provider.
 
 ---
 
-## 6. Invariants
+## 10. Retry Policy
 
-Provider is stateless.
+Only transient failures are retried.
 
-Operations are deterministic.
+Retries use exponential backoff with jitter.
 
-External API details remain hidden behind the contract.
+Permanent failures fail immediately.
+
+---
+
+## 11. Idempotency
+
+Repeated Create, Bind and Complete requests must not create duplicate YouTube resources.
+
+Operations are safe to repeat after process restart.
+
+---
+
+## 12. Adapter Requirements
+
+The adapter encapsulates API version changes.
+
+The domain contract remains stable even if the YouTube API changes.

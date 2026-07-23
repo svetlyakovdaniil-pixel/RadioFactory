@@ -1,12 +1,13 @@
 # CHANGELOG
 
-## Documentation Update 16A
+## Documentation Update 16B
 
-Started comprehensive YouTube Provider specification.
+Expanded YouTube Provider specification.
 
 Added:
-- purpose
-- responsibilities
-- provider contract
-- core operations
-- invariants
+- broadcast creation workflow
+- resource recovery
+- error normalization
+- retry policy
+- idempotency
+- adapter requirements

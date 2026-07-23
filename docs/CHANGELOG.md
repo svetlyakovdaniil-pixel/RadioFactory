@@ -1,12 +1,13 @@
 # CHANGELOG
 
-## Documentation Update 21A
+## Documentation Update 21B
 
-Started comprehensive API specification.
+Expanded API specification.
 
 Added:
-- purpose
-- responsibilities
-- API model
-- transport
-- invariants
+- REST model
+- WebSocket model
+- DTO rules
+- error model
+- idempotency
+- versioning

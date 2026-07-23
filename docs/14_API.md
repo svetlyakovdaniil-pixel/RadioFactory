@@ -1,58 +1,67 @@
-# API Specification (Update 21A)
+# API Specification (Update 21B)
 
-## 1. Purpose
+## 7. REST API
 
-The API exposes RadioFactory capabilities to external clients.
+Resources expose application capabilities only.
 
-The API is an application boundary and contains no domain logic.
+Rules:
 
----
-
-## 2. Responsibilities
-
-- accept commands
-- execute queries
-- authenticate callers
-- authorize operations
-- return normalized responses
+- resource-oriented URLs
+- versioned endpoints
+- explicit HTTP methods
+- normalized responses
 
 ---
 
-## 3. Non-Responsibilities
+## 8. WebSocket
 
-The API never:
+Server publishes:
 
-- modifies domain rules
-- bypasses application services
-- accesses infrastructure directly
-- persists domain state
+- state updates
+- domain events
+- diagnostics
+- notifications
 
----
-
-## 4. API Model
-
-The API follows Command/Query separation.
-
-Commands modify state.
-
-Queries never modify state.
+Clients never invoke business logic directly over events.
 
 ---
 
-## 5. Transport
+## 9. DTO Model
 
-Supported transports may include:
+DTOs are immutable.
 
-- REST
-- WebSocket
+Rules:
 
-Transport technology never changes application contracts.
+- explicit schema
+- backward compatible additions
+- no infrastructure types
+- stable identifiers
 
 ---
 
-## 6. Invariants
+## 10. Error Model
 
-- deterministic responses
-- versioned contracts
-- immutable DTO definitions
-- application boundary isolation
+Responses contain:
+
+- errorCode
+- message
+- correlationId
+- details (optional)
+
+Internal exceptions never leak to clients.
+
+---
+
+## 11. Idempotency
+
+Commands may include an idempotency key.
+
+Repeated requests must not duplicate completed operations.
+
+---
+
+## 12. Versioning
+
+Breaking changes require a new API version.
+
+Multiple API versions may coexist.

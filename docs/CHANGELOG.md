@@ -1,13 +1,12 @@
 # CHANGELOG
 
-## Documentation Update 15C
+## Documentation Update 16A
 
-Completed Worker Version 1 specification.
+Started comprehensive YouTube Provider specification.
 
 Added:
-- restart recovery
-- runtime reconciliation
-- graceful shutdown
-- failure escalation
-- observability metrics
-- implementation constraints
+- purpose
+- responsibilities
+- provider contract
+- core operations
+- invariants

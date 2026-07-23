@@ -1,67 +1,75 @@
-# FFmpeg Specification (Update 17B)
+# FFmpeg Specification (Update 17C)
 
-## 7. Command Construction
+## 13. Graceful Shutdown
 
-Arguments are built from validated configuration only.
+Shutdown sequence:
 
-Rules:
+1. Stop accepting new input.
+2. Flush encoder buffers.
+3. Close RTMP connection.
+4. Wait for process exit.
+5. Record exit metadata.
 
-- deterministic ordering
-- validated paths
-- explicit codecs
-- explicit bitrate
-- explicit reconnect settings
+Forced termination is a separate workflow.
 
 ---
 
-## 8. Process Monitoring
+## 14. Worker Interaction
 
-Worker continuously monitors:
+Worker is the only component allowed to:
 
-- stdout
-- stderr
+- start FFmpeg
+- stop FFmpeg
+- restart FFmpeg
+- collect telemetry
+
+FFmpeg never communicates with Station directly.
+
+---
+
+## 15. Observability
+
+Required telemetry:
+
+- process uptime
+- restart count
+- average startup time
+- average bitrate
+- dropped frames
+- reconnect count
+
+Every execution is linked by correlationId.
+
+---
+
+## 16. Diagnostics
+
+Diagnostic output includes:
+
+- command line
+- sanitized environment
 - exit code
-- CPU usage
-- memory usage
-- process lifetime
+- stderr summary
+- execution duration
 
-Unexpected termination generates a domain event.
-
----
-
-## 9. Exit Codes
-
-Exit codes are classified into:
-
-- Success
-- Configuration Failure
-- Input Failure
-- Network Failure
-- Encoder Failure
-- Unknown Failure
+Secrets must never appear in diagnostics.
 
 ---
 
-## 10. Restart Policy
+## 17. Security
 
-Transient failures use exponential backoff.
+Validate executable path before launch.
 
-Permanent configuration errors are never retried.
+Reject untrusted arguments.
 
-Restart history is persisted.
-
----
-
-## 11. Performance Requirements
-
-Startup time must be measurable.
-
-Encoding latency and resource usage are exported as metrics.
+Execute with least required privileges.
 
 ---
 
-## 12. Constraints
+## 18. Architectural Constraints
 
-FFmpeg never owns business state.
+FFmpeg is replaceable without changing domain logic.
 
-Process replacement must not affect domain logic.
+No business rules may exist in process management.
+
+Version 1 complete.

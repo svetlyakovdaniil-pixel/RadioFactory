@@ -1,12 +1,13 @@
 # CHANGELOG
 
-## Documentation Update 30A
+## Documentation Update 30B
 
-Started Testing Strategy Version 1.
+Expanded Testing Strategy.
 
 Added:
-- purpose
-- responsibilities
-- scope
-- testing principles
-- invariants
+- testing levels
+- test environments
+- test data
+- automation
+- regression testing
+- coverage

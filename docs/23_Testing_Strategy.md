@@ -1,66 +1,55 @@
-# Testing Strategy (Update 30A)
+# Testing Strategy (Update 30B)
 
-## 1. Purpose
+## 7. Testing Levels
 
-The Testing Strategy defines the principles, scope and objectives of software testing across the RadioFactory project.
+Testing is organized into:
 
-Testing ensures reliability, stability and predictable system behavior.
+- unit testing
+- integration testing
+- system testing
+- end-to-end testing
 
----
-
-## 2. Responsibilities
-
-The strategy defines:
-
-- testing objectives
-- quality expectations
-- testing levels
-- verification principles
-- continuous validation
+Each level validates different aspects of system quality.
 
 ---
 
-## 3. Non-Responsibilities
+## 8. Test Environments
 
-This document does not define:
+Testing environments should resemble production where practical.
 
-- implementation details
-- deployment procedures
-- production monitoring
-- architectural decisions
+Environment differences are documented.
 
 ---
 
-## 4. Scope
+## 9. Test Data
 
-The strategy applies to:
-
-- application services
-- infrastructure
-- APIs
-- automation
-- documentation where applicable
-
----
-
-## 5. Testing Principles
-
-Testing prioritizes:
-
-- repeatability
-- automation
-- determinism
-- traceability
-- risk reduction
-
----
-
-## 6. Invariants
-
-Every testing activity should be:
+Test data must be:
 
 - reproducible
-- documented
-- reviewable
-- measurable
-- continuously maintainable
+- isolated
+- versioned where appropriate
+- safe for non-production use
+
+---
+
+## 10. Automation
+
+Automated tests are preferred for repeatable verification.
+
+Manual testing complements automation where necessary.
+
+---
+
+## 11. Regression Testing
+
+Regression testing verifies that existing functionality remains unaffected by changes.
+
+Critical workflows receive priority.
+
+---
+
+## 12. Coverage
+
+Coverage metrics are monitored to identify untested areas.
+
+Coverage is used as a quality indicator rather than the sole success metric.

@@ -1,67 +1,59 @@
-# API Specification (Update 21B)
+# API Specification (Update 21C)
 
-## 7. REST API
+## 13. Authentication
 
-Resources expose application capabilities only.
+Clients authenticate before invoking protected endpoints.
 
-Rules:
-
-- resource-oriented URLs
-- versioned endpoints
-- explicit HTTP methods
-- normalized responses
+Supported mechanisms are implementation-specific but the domain remains authentication-agnostic.
 
 ---
 
-## 8. WebSocket
+## 14. Authorization
 
-Server publishes:
+Authorization is enforced by the application layer.
 
-- state updates
-- domain events
-- diagnostics
-- notifications
-
-Clients never invoke business logic directly over events.
+Every request is evaluated against the caller's permissions.
 
 ---
 
-## 9. DTO Model
+## 15. Observability
 
-DTOs are immutable.
+API exposes:
 
-Rules:
+- request latency
+- error rate
+- throughput
+- active connections
+- websocket sessions
 
-- explicit schema
-- backward compatible additions
-- no infrastructure types
-- stable identifiers
-
----
-
-## 10. Error Model
-
-Responses contain:
-
-- errorCode
-- message
-- correlationId
-- details (optional)
-
-Internal exceptions never leak to clients.
+Every request carries a correlationId.
 
 ---
 
-## 11. Idempotency
+## 16. Rate Limiting
 
-Commands may include an idempotency key.
+Rate limits protect system stability.
 
-Repeated requests must not duplicate completed operations.
+Limit responses are deterministic and include retry guidance.
 
 ---
 
-## 12. Versioning
+## 17. Security
 
-Breaking changes require a new API version.
+Requirements:
 
-Multiple API versions may coexist.
+- TLS for transport
+- input validation
+- output encoding
+- no secret leakage
+- audit of privileged operations
+
+---
+
+## 18. Architectural Constraints
+
+API remains a thin application boundary.
+
+No business rules or infrastructure-specific behavior belong in controllers.
+
+API Version 1 specification complete.

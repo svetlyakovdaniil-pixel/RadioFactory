@@ -1,13 +1,13 @@
 # CHANGELOG
 
-## Documentation Update 21B
+## Documentation Update 21C
 
-Expanded API specification.
+Completed API Version 1 specification.
 
 Added:
-- REST model
-- WebSocket model
-- DTO rules
-- error model
-- idempotency
-- versioning
+- authentication
+- authorization
+- observability
+- rate limiting
+- security
+- architectural constraints

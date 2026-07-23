@@ -1,13 +1,13 @@
 # CHANGELOG
 
-## Documentation Update 39C
+## Documentation Update 40A
 
-Completed Project Glossary Version 1.
+Started Documentation Governance Version 1.
 
 Added:
-- terminology audit
-- terminology risk management
-- continuous improvement
-- glossary governance
-- long-term consistency
-- final constraints
+- purpose
+- responsibilities
+- non-responsibilities
+- scope
+- governance principles
+- invariants

@@ -1,13 +1,13 @@
 # CHANGELOG
 
-## Documentation Update 38C
+## Documentation Update 39A
 
-Completed Platform Constraints Version 1.
+Started Project Glossary Version 1.
 
 Added:
-- constraint audit
-- risk management
-- long-term stability
-- continuous improvement
-- governance
-- final constraints
+- purpose
+- responsibilities
+- non-responsibilities
+- scope
+- terminology principles
+- invariants

@@ -1,13 +1,13 @@
 # CHANGELOG
 
-## Documentation Update 34C
+## Documentation Update 35A
 
-Completed API Guidelines Version 1 specification.
+Started Data Model Version 1.
 
 Added:
-- API security
-- rate limiting
-- API lifecycle
-- API audit
-- continuous improvement
-- final constraints
+- purpose
+- responsibilities
+- non-responsibilities
+- scope
+- data principles
+- invariants

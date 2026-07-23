@@ -1,13 +1,13 @@
 # CHANGELOG
 
-## Documentation Update 19B
+## Documentation Update 19C
 
-Expanded Storage specification.
+Completed Storage Version 1 specification.
 
 Added:
-- transaction model
-- concurrency
-- failure recovery
-- schema migrations
-- backup and restore
-- repository rules
+- observability
+- audit
+- retention policy
+- security
+- performance
+- architectural constraints

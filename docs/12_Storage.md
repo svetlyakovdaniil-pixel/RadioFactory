@@ -1,63 +1,72 @@
-# Storage Specification (Update 19B)
+# Storage Specification (Update 19C)
 
-## 7. Transaction Model
+## 13. Observability
 
-Transactions guarantee atomic aggregate updates.
+Storage exposes:
 
-Rules:
+- transaction latency
+- commit rate
+- rollback rate
+- query latency
+- lock contention
+- storage availability
 
-- begin
-- validate
-- commit
-- rollback
-
-Nested business transactions are prohibited unless explicitly supported.
-
----
-
-## 8. Concurrency
-
-Supported strategies:
-
-- optimistic concurrency
-- pessimistic locking
-
-Conflict detection is deterministic.
+All telemetry includes correlationId.
 
 ---
 
-## 9. Failure Recovery
+## 14. Audit
 
-After failures Storage guarantees:
+Audit records are immutable.
 
-- committed data remains committed
-- rolled back data remains invisible
-- partial writes are rejected
+Each record contains:
 
----
+- timestamp
+- actor
+- operation
+- aggregateId
+- correlationId
 
-## 10. Schema Migrations
-
-Schema evolution is versioned.
-
-Every migration is repeatable, auditable and reversible when possible.
+Audit history is never rewritten.
 
 ---
 
-## 11. Backup and Restore
+## 15. Retention Policy
 
-Backups preserve:
+Retention rules define:
 
-- aggregate state
-- audit history
-- schema version
+- operational data lifetime
+- audit retention
+- backup retention
+- archival policy
 
-Restore validates consistency before activation.
+Expired data is removed only through approved retention workflows.
 
 ---
 
-## 12. Repository Rules
+## 16. Security
 
-Repositories expose domain aggregates only.
+Requirements:
 
-Infrastructure details never cross repository boundaries.
+- encrypt data at rest where applicable
+- least-privilege access
+- validated repository access
+- secrets never stored in domain objects
+
+---
+
+## 17. Performance
+
+Storage must support predictable latency.
+
+Long-running operations are isolated from critical transactional paths.
+
+---
+
+## 18. Architectural Constraints
+
+Storage is replaceable without changing domain logic.
+
+Repositories remain the only persistence boundary.
+
+Storage Version 1 specification complete.

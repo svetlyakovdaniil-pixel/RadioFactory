@@ -1,13 +1,13 @@
 # CHANGELOG
 
-## Documentation Update 33A
+## Documentation Update 33B
 
-Started Security Model Version 1.
+Expanded Security Model specification.
 
 Added:
-- purpose
-- responsibilities
-- non-responsibilities
-- scope
-- security principles
-- invariants
+- authentication
+- authorization
+- secret management
+- data protection
+- security logging
+- secure configuration

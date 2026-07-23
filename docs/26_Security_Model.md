@@ -1,66 +1,50 @@
-# Security Model (Update 33A)
+# Security Model (Update 33B)
 
-## 1. Purpose
+## 7. Authentication
 
-The Security Model defines the principles, responsibilities and scope of security across the RadioFactory platform.
+Authentication verifies user and service identities before granting access.
 
-Its objective is to protect systems, data and operational integrity.
-
----
-
-## 2. Responsibilities
-
-This document defines:
-
-- security principles
-- authentication responsibilities
-- authorization responsibilities
-- security governance
-- operational security practices
+Authentication mechanisms are centrally managed and periodically reviewed.
 
 ---
 
-## 3. Non-Responsibilities
+## 8. Authorization
 
-The Security Model does not define:
+Authorization follows the principle of least privilege.
 
-- implementation details
-- business logic
-- feature specifications
-- deployment procedures
+Permissions are assigned according to operational responsibilities.
 
 ---
 
-## 4. Scope
+## 9. Secret Management
 
-The security model applies to:
+Secrets are:
 
-- backend services
-- frontend applications
-- infrastructure
-- automation
-- operational processes
-
----
-
-## 5. Security Principles
-
-Security emphasizes:
-
-- least privilege
-- defense in depth
-- secure defaults
-- traceability
-- continuous improvement
+- securely stored
+- access controlled
+- periodically rotated
+- never embedded in source code
 
 ---
 
-## 6. Invariants
+## 10. Data Protection
 
-Security controls must be:
+Sensitive information is protected during storage, processing and transmission.
 
-- documented
-- reviewable
-- reproducible
-- auditable
-- consistently applied
+Protection mechanisms are documented.
+
+---
+
+## 11. Security Logging
+
+Security-relevant events are logged for auditing and incident investigation.
+
+Log integrity is preserved.
+
+---
+
+## 12. Secure Configuration
+
+Production configuration follows documented security baselines.
+
+Configuration changes are reviewed before deployment.

@@ -1,63 +1,55 @@
-# Security Specification (Update 23A)
+# Security Specification (Update 23B)
 
-## 1. Purpose
+## 7. Authentication
 
-Security protects RadioFactory assets, services and users.
+Authentication verifies caller identity before protected operations.
 
-Security requirements apply across every architectural layer.
+Requirements:
 
----
-
-## 2. Responsibilities
-
-Security is responsible for:
-
-- authentication
-- authorization
-- secret protection
-- secure communication
-- auditing
+- strong authentication
+- session validation
+- token expiration
+- revocation support
 
 ---
 
-## 3. Non-Responsibilities
+## 8. Authorization
 
-Security does not define:
+Authorization is role-based.
 
-- business rules
-- application workflows
-- domain behavior
+Every request is evaluated using least-privilege principles.
 
 ---
 
-## 4. Trust Model
+## 9. Secret Management
 
-Every external actor is considered untrusted until authenticated.
+Secrets are:
 
-Trust is explicitly established and continuously verified.
-
----
-
-## 5. Security Domains
-
-Primary domains:
-
-- client
-- API
-- application
-- infrastructure
-- external services
-
-Boundaries are explicitly defined.
+- externally managed
+- rotated regularly
+- never hardcoded
+- never logged
 
 ---
 
-## 6. Invariants
+## 10. Secure Storage
 
-Security must be:
+Sensitive data is protected using encryption where applicable.
 
-- least privilege
-- deny by default
-- auditable
-- deterministic
-- versioned
+Integrity checks detect unauthorized modification.
+
+---
+
+## 11. Transport Security
+
+All external communication uses secure transport.
+
+Certificates are validated before trust is established.
+
+---
+
+## 12. Service Protection
+
+Internal services authenticate each other.
+
+Administrative interfaces require additional protection.

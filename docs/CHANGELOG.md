@@ -1,12 +1,13 @@
 # CHANGELOG
 
-## Documentation Update 23A
+## Documentation Update 23B
 
-Started comprehensive Security specification.
+Expanded Security specification.
 
 Added:
-- purpose
-- responsibilities
-- trust model
-- security domains
-- invariants
+- authentication
+- authorization
+- secret management
+- secure storage
+- transport security
+- service protection

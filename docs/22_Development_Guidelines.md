@@ -1,66 +1,64 @@
-# Development Guidelines (Update 29A)
+# Development Guidelines (Update 29B)
 
-## 1. Purpose
+## 7. Project Structure
 
-Development Guidelines define common engineering practices used across the RadioFactory project.
+Project directories have clearly defined responsibilities.
 
-Consistent development improves maintainability and long-term quality.
-
----
-
-## 2. Responsibilities
-
-These guidelines define:
-
-- development workflow
-- coding standards
-- review expectations
-- contribution rules
-- documentation practices
+Source code, documentation, assets and automation remain separated.
 
 ---
 
-## 3. Non-Responsibilities
+## 8. Naming Conventions
 
-Development guidelines do not define:
+Names must be:
 
-- business requirements
-- architecture
-- operational procedures
-- deployment policies
-
----
-
-## 4. Scope
-
-The guidelines apply to:
-
-- application code
-- infrastructure code
-- documentation
-- automation scripts
-- tests
+- descriptive
+- stable
+- consistent
+- technology-neutral where practical
 
 ---
 
-## 5. Principles
+## 9. Code Style
 
-Development emphasizes:
+Code should prioritize:
 
-- simplicity
-- consistency
 - readability
-- traceability
-- maintainability
+- simplicity
+- predictable formatting
+- minimal complexity
+
+Formatting rules are applied consistently.
 
 ---
 
-## 6. Invariants
+## 10. Git Workflow
 
-Every contribution must be:
+Changes are committed in small logical units.
 
-- reviewable
-- reproducible
-- documented
-- version controlled
-- traceable
+Each commit has a clear purpose.
+
+Branches are short-lived and regularly synchronized.
+
+---
+
+## 11. Pull Requests
+
+Every pull request includes:
+
+- implementation summary
+- testing notes
+- affected components
+- documentation updates when required
+
+---
+
+## 12. Code Review
+
+Reviews verify:
+
+- correctness
+- maintainability
+- consistency
+- documentation impact
+- architectural compliance

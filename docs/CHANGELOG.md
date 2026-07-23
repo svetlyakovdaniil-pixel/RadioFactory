@@ -1,12 +1,13 @@
 # CHANGELOG
 
-## Documentation Update 29A
+## Documentation Update 29B
 
-Started comprehensive Development Guidelines specification.
+Expanded Development Guidelines.
 
 Added:
-- purpose
-- responsibilities
-- scope
-- development principles
-- invariants
+- project structure
+- naming conventions
+- code style
+- Git workflow
+- pull request requirements
+- code review process

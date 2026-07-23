@@ -1,43 +1,35 @@
-# Architecture
+# Architecture (Update)
 
-## Иерархия
+## Responsibility Boundaries
 
-```text
 Workspace
-├── YouTube Channel
-│   ├── Station
-│   │   ├── Media Library
-│   │   ├── Station Configuration
-│   │   ├── Station State
-│   │   ├── Playback Engine
-│   │   └── Broadcast Lifecycle
-│   └── Station
-└── YouTube Channel
-    └── Station
-```
+- global coordination
+- resource limits
+- recovery queue
 
-## Workspace
+YouTube Channel
+- YouTube integration
+- publication defaults
 
-Корневой объект: каналы, общий Dashboard, Telegram, ресурсы, восстановление и системные события.
+Station
+- business logic
+- media selection
+- runtime state
+- lifecycle
 
-## YouTube Channel
+Broadcast
+- one LIVE session
 
-Реальный канал YouTube: OAuth, YouTube API, плейлисты и общие параметры публикации.
+Worker
+- executes commands
 
-## Station
+Dashboard
+- visualizes state
+- never talks directly to FFmpeg
 
-Независимая рабочая единица: контент, подготовка LIVE, музыкальные циклы, запуск, остановка, состояние, восстановление и история.
+## Forbidden Dependencies
 
-## Broadcast
-
-Отдельный экземпляр LIVE, получающий собственный неизменяемый пакет ресурсов.
-
-## Media Library
-
-Обработанные музыка, loop-видео, превью, названия и описания конкретной Station.
-
-## Изоляция
-
-Архитектура должна позволять независимо запускать, останавливать, восстанавливать и диагностировать каждую Station.
-
-Конкретная реализация Worker, Scheduler, API и хранилища ещё не утверждена.
+Dashboard -> FFmpeg
+Station -> another Station runtime
+Worker -> UI
+Broadcast -> Workspace configuration

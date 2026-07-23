@@ -1,15 +1,12 @@
-# Changelog
+# CHANGELOG
 
-## 2026-07-23 — Documentation Update 01
+## Documentation Update 02
 
-### Расширено
+Expanded architecture with:
 
-- `05_Station.md`: автономность, данные, пользовательское намерение, запуск, остановка, ожидание ресурсов, ошибки, восстановление и конфликты команд.
-- `07_Broadcast.md`: жизненный цикл, Pending LIVE Package, музыкальный цикл, целевая длительность, Cleanup, восстановление того же LIVE и история.
-- `08_Dashboard.md`: визуальный референс, главная страница, карточки Station, управление, статусы, ошибки, Media, History и актуальность данных.
+- architectural invariants
+- responsibility boundaries
+- forbidden dependencies
+- Station/Broadcast addenda
 
-### Архитектурные решения
-
-Новых решений не принято.
-
-Документы расширены только на основе решений №1–26. Нерешённые детали явно оставлены открытыми.
+No new functional decisions introduced.

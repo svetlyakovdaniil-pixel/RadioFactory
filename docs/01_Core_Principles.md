@@ -1,14 +1,22 @@
-# Core Principles
+# Core Principles (Update)
 
-1. **Сначала проектирование, потом код.** Новая система не реализуется до завершения спецификации.
-2. **Workspace — корень системы.** Все каналы, Station и общие механизмы принадлежат Workspace.
-3. **Station автономна.** Собственные настройки, контент, состояние и история.
-4. **Локализация неисправностей.** Проблема одной Station не должна останавливать остальные.
-5. **Automation First.** Сначала безопасное автоматическое восстановление, затем вмешательство пользователя.
-6. **LIVE важнее фоновых задач.** Импорт не должен ухудшать стабильность эфиров.
-7. **Контент доступен только после успешной обработки.** Ошибочные файлы не попадают в рабочую библиотеку.
-8. **Безопасное завершение важнее скорости.** Новый LIVE ждёт корректной очистки предыдущего.
-9. **Понятные сообщения прежде технических деталей.** Сначала объяснение, затем код ошибки.
-10. **Предупреждение не равно остановке.** Некритичная проблема не прерывает LIVE.
-11. **Намерение пользователя сохраняется.** Ручные остановки не отменяются перезагрузкой сервера.
-12. **Документация — источник истины.** Решение считается зафиксированным только после обновления документов.
+## Architectural Invariants
+
+The following invariants must never be violated.
+
+1. One Station owns at most one active Broadcast.
+2. One Broadcast belongs to exactly one Station.
+3. A Station never modifies another Station's runtime state.
+4. Cleanup of one Broadcast never affects another Station.
+5. Manual Stop always survives restart.
+6. Automatic recovery never overrides explicit user intent.
+7. Waiting for resources is not an Error state.
+8. Active LIVE has higher priority than background work.
+
+## Design Philosophy
+
+RadioFactory is designed around isolation, recoverability and observability.
+
+Every implementation decision should preserve these three properties.
+
+If a new feature weakens one of them, the architecture must be reconsidered before implementation.

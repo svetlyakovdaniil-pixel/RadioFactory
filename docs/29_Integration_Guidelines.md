@@ -1,66 +1,43 @@
-# Integration Guidelines (Update 36A)
+# Integration Guidelines (Update 36B)
 
-## 1. Purpose
+## 7. Integration Contracts
 
-The Integration Guidelines define common principles for integrating RadioFactory with internal and external systems.
-
-The objective is reliable, consistent and maintainable integrations.
+Every integration defines a documented contract covering supported operations, payloads and compatibility expectations.
 
 ---
 
-## 2. Responsibilities
+## 8. Message Exchange
 
-This document defines:
+Message formats remain consistent and version-aware.
 
-- integration principles
-- interface responsibilities
-- integration lifecycle
-- interoperability expectations
-- reliability requirements
+Required and optional fields are explicitly documented.
 
 ---
 
-## 3. Non-Responsibilities
+## 9. Error Handling
 
-This document does not define:
+Integration failures return predictable error information.
 
-- business workflows
-- implementation details
-- infrastructure architecture
-- deployment procedures
+Retries distinguish transient failures from permanent errors.
 
 ---
 
-## 4. Scope
+## 10. Timeouts and Retries
 
-These guidelines apply to:
+Timeouts and retry policies are documented for every integration.
 
-- internal services
-- external APIs
-- event-driven integrations
-- scheduled synchronization
-- third-party platforms
+Retry strategies avoid duplicate processing.
 
 ---
 
-## 5. Integration Principles
+## 11. Idempotency
 
-Integration emphasizes:
+Repeated requests produce predictable results where supported.
 
-- loose coupling
-- reliability
-- observability
-- compatibility
-- traceability
+Idempotent operations are clearly identified.
 
 ---
 
-## 6. Invariants
+## 12. Integration Monitoring
 
-Every integration must be:
-
-- documented
-- versioned
-- testable
-- reviewable
-- maintainable
+Integrations expose operational metrics, health status and logging sufficient for diagnostics and auditing.

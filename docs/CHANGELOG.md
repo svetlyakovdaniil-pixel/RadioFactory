@@ -1,13 +1,13 @@
 # CHANGELOG
 
-## Documentation Update 36A
+## Documentation Update 36B
 
-Started Integration Guidelines Version 1.
+Expanded Integration Guidelines.
 
 Added:
-- purpose
-- responsibilities
-- non-responsibilities
-- scope
-- integration principles
-- invariants
+- integration contracts
+- message exchange
+- error handling
+- timeouts and retries
+- idempotency
+- integration monitoring

@@ -1,64 +1,50 @@
-# Development Guidelines (Update 29B)
+# Development Guidelines (Update 29C)
 
-## 7. Project Structure
+## 13. Technical Debt
 
-Project directories have clearly defined responsibilities.
+Technical debt is documented, prioritized and periodically reviewed.
 
-Source code, documentation, assets and automation remain separated.
-
----
-
-## 8. Naming Conventions
-
-Names must be:
-
-- descriptive
-- stable
-- consistent
-- technology-neutral where practical
+Temporary solutions require explicit justification.
 
 ---
 
-## 9. Code Style
+## 14. Logging and Diagnostics
 
-Code should prioritize:
+New functionality should provide sufficient logging for troubleshooting.
 
-- readability
-- simplicity
-- predictable formatting
-- minimal complexity
-
-Formatting rules are applied consistently.
+Logs must support operational investigations without exposing sensitive information.
 
 ---
 
-## 10. Git Workflow
+## 15. Secure Development
 
-Changes are committed in small logical units.
+Security considerations are included during design, implementation and review.
 
-Each commit has a clear purpose.
-
-Branches are short-lived and regularly synchronized.
+Security fixes receive elevated priority.
 
 ---
 
-## 11. Pull Requests
+## 16. Definition of Done
 
-Every pull request includes:
+A change is considered complete only when:
 
-- implementation summary
-- testing notes
-- affected components
-- documentation updates when required
+- implementation is finished
+- tests are updated where applicable
+- documentation is updated
+- review feedback is resolved
 
 ---
 
-## 12. Code Review
+## 17. Continuous Improvement
 
-Reviews verify:
+Engineering practices evolve through retrospective feedback and documented proposals.
 
-- correctness
-- maintainability
-- consistency
-- documentation impact
-- architectural compliance
+Changes remain incremental and traceable.
+
+---
+
+## 18. Final Constraints
+
+Development Guidelines define engineering practices but do not replace architectural or operational documentation.
+
+Development Guidelines Version 1 specification complete.

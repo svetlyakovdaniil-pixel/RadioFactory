@@ -1,13 +1,13 @@
 # CHANGELOG
 
-## Documentation Update 29B
+## Documentation Update 29C
 
-Expanded Development Guidelines.
+Completed Development Guidelines Version 1 specification.
 
 Added:
-- project structure
-- naming conventions
-- code style
-- Git workflow
-- pull request requirements
-- code review process
+- technical debt
+- logging and diagnostics
+- secure development
+- definition of done
+- continuous improvement
+- final constraints

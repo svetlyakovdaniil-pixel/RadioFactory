@@ -1,20 +1,30 @@
-# Station (Update 03)
+# Station (Update 04)
 
-## Lifecycle Responsibilities
+## Command Processing
 
-Station отвечает только за принятие решений.
+Station processes one lifecycle command at a time.
 
-Она НЕ должна:
-- выполнять HTTP-запросы к интерфейсу;
-- рисовать UI;
-- самостоятельно управлять другими Station.
+If another command arrives:
 
-## State Ownership
+- incompatible command is rejected or queued;
+- compatible read-only operations may continue.
 
-Только Station владеет:
-- текущим состоянием;
-- активным Broadcast;
-- Pending LIVE Package;
-- пользовательским намерением (Running/Stopped).
+## Ownership
 
-Никакой другой компонент не должен менять эти данные напрямую.
+Only Station may transition its lifecycle state.
+
+External components request changes but do not mutate state directly.
+
+## Events
+
+Station emits domain events such as:
+
+- StationStarted
+- BroadcastPrepared
+- BroadcastStarted
+- BroadcastFinished
+- RecoveryStarted
+- RecoveryCompleted
+- StationFailed
+
+Consumers react to events instead of polling Station internals whenever possible.

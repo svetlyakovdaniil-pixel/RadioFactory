@@ -1,17 +1,27 @@
-# Broadcast Addendum
+# Broadcast (Update 04)
 
-## Broadcast Invariants
+## Sequence: Recovery (<3 min)
 
-- immutable Pending LIVE Package
-- exactly one active Broadcast per Station
-- recovery <3 minutes keeps Broadcast identity
-- recovery >=3 minutes creates a new Broadcast
+```text
+Failure
+ │
+ ▼
+Recovery detects outage
+ │
+ ▼
+Same Broadcast valid?
+ │
+ ├─ No → New Broadcast
+ │
+ └─ Yes
+      │
+      ▼
+Restore playback position
+      │
+      ▼
+Continue same LIVE
+```
 
-## Sequence
+## Recovery Invariant
 
-Prepare
--> Create LIVE
--> Stream
--> Finish
--> Cleanup
--> Prepare next
+The recovery procedure must never create a second active Broadcast for the same Station.

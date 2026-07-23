@@ -1,21 +1,18 @@
-# Dashboard (Update 03)
+# Dashboard (Update 04)
 
-## UX Principles
+## Real-time Behaviour
 
-Каждое действие пользователя проходит один жизненный цикл:
+Dashboard displays only confirmed backend state.
 
-Command
-→ Accepted
-→ Running
-→ Success | Failed
+Optimistic UI must never claim that a Station is running before Backend confirms it.
 
-Повторное нажатие одной и той же команды не должно создавать повторные операции.
+## Command Feedback
 
-## Information Priority
+Each command has four visible phases:
 
-Порядок отображения информации:
+- Accepted
+- Executing
+- Completed
+- Failed
 
-1. Что происходит.
-2. Что уже сделала система.
-3. Что нужно сделать пользователю.
-4. Технические детали.
+The interface must never leave a command indefinitely in an ambiguous loading state.

@@ -1,11 +1,11 @@
 # CHANGELOG
 
-## Documentation Update 03
+## Documentation Update 04
 
 Added:
-- component interaction model
-- dependency rules
-- Station ownership rules
-- Dashboard UX principles
+- Station start sequence
+- Broadcast recovery sequence
+- Event-oriented Station model
+- Dashboard realtime behaviour rules
 
-No functional behaviour changed.
+No functional decisions changed.

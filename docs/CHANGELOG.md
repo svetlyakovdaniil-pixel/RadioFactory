@@ -1,13 +1,12 @@
 # CHANGELOG
 
-## Documentation Update 26C
+## Documentation Update 27A
 
-Completed Operations Version 1 specification.
+Started comprehensive Architecture Decisions specification.
 
 Added:
-- operational observability
-- operational audit
-- performance
-- operational security
-- scalability
-- architectural constraints
+- purpose
+- responsibilities
+- ADR structure
+- lifecycle
+- invariants

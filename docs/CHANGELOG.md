@@ -1,13 +1,12 @@
 # CHANGELOG
 
-## Documentation Update 20C
+## Documentation Update 21A
 
-Completed Dashboard Version 1 specification.
+Started comprehensive API specification.
 
 Added:
-- observability
-- user audit
-- performance
-- security
-- scalability
-- architectural constraints
+- purpose
+- responsibilities
+- API model
+- transport
+- invariants

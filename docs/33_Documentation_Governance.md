@@ -1,64 +1,43 @@
-# Documentation Governance (Update 40A)
+# Documentation Governance (Update 40B)
 
-## 1. Purpose
+## 7. Document Lifecycle
 
-The Documentation Governance defines how RadioFactory documentation is created, reviewed, maintained and evolved.
+Every document progresses through creation, review, approval, publication, maintenance and retirement.
 
----
-
-## 2. Responsibilities
-
-This document defines:
-
-- documentation ownership
-- review responsibilities
-- version management
-- publication rules
-- quality expectations
+Lifecycle state is documented.
 
 ---
 
-## 3. Non-Responsibilities
+## 8. Review Process
 
-This document does not define:
+Documentation reviews verify accuracy, consistency and completeness.
 
-- software implementation
-- business processes
-- infrastructure configuration
-- deployment workflows
+Review responsibilities are clearly assigned.
 
 ---
 
-## 4. Scope
+## 9. Version Management
 
-Applies to:
+Every document has a version history.
 
-- architecture documents
-- specifications
-- operational documentation
-- developer guides
-- user documentation
+Major and minor revisions are distinguished.
 
 ---
 
-## 5. Governance Principles
+## 10. Change Management
 
-Documentation emphasizes:
+Documentation changes are proposed, reviewed and approved before publication.
 
-- accuracy
-- consistency
-- traceability
-- maintainability
-- accessibility
+All changes remain traceable.
 
 ---
 
-## 6. Invariants
+## 11. Publication Standards
 
-Documentation must remain:
+Published documentation follows consistent structure and formatting standards.
 
-- reviewed
-- versioned
-- searchable
-- maintainable
-- auditable
+---
+
+## 12. Documentation Quality
+
+Quality is evaluated using completeness, clarity, consistency and maintainability criteria.

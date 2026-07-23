@@ -1,13 +1,13 @@
 # CHANGELOG
 
-## Documentation Update 40A
+## Documentation Update 40B
 
-Started Documentation Governance Version 1.
+Expanded Documentation Governance.
 
 Added:
-- purpose
-- responsibilities
-- non-responsibilities
-- scope
-- governance principles
-- invariants
+- document lifecycle
+- review process
+- version management
+- change management
+- publication standards
+- documentation quality

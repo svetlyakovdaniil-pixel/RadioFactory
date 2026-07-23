@@ -1,9 +1,5 @@
 # CHANGELOG
 
-## Knowledge Base 01
+## Knowledge Base 02
 
-Added:
-- System Overview
-- Core goals
-- Component overview
-- Design philosophy
+Added Component Catalog.

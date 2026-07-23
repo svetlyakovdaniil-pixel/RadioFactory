@@ -1,58 +1,47 @@
-# Operations Guide (Update 32B)
+# Operations Guide (Update 32C)
 
-## 7. Service Lifecycle
+## 13. Incident Management
 
-Operational procedures define how services are:
+Operational incidents are classified, documented and tracked until resolution.
 
-- started
-- stopped
-- restarted
-- validated
-
-Each action is documented.
+Post-incident reviews identify corrective and preventive actions.
 
 ---
 
-## 8. Monitoring
+## 14. Planned Maintenance
 
-Monitoring continuously observes:
+Maintenance windows are scheduled, communicated and documented.
 
-- service health
-- resource utilization
-- availability
-- operational events
-
-Alerts are reviewed promptly.
+Service validation follows every maintenance activity.
 
 ---
 
-## 9. Logging
+## 15. Operational Risk Management
 
-Operational logs provide sufficient information for diagnostics and auditing.
+Operational risks are identified, assessed and periodically reviewed.
 
-Log retention follows documented policies.
-
----
-
-## 10. Backup
-
-Backup procedures define:
-
-- protected data
-- backup frequency
-- verification
-- restoration readiness
+Mitigation plans are maintained for critical risks.
 
 ---
 
-## 11. Recovery
+## 16. Operations Audit
 
-Recovery procedures minimize service disruption.
+Operational processes are periodically audited for compliance and effectiveness.
 
-Recovery steps are tested periodically.
+Audit findings are documented and assigned for follow-up.
 
 ---
 
-## 12. Configuration Management
+## 17. Continuous Improvement
 
-Operational configuration is versioned, documented and reviewed before production changes.
+Operational practices evolve through metrics, retrospectives and documented improvement proposals.
+
+Changes remain versioned and traceable.
+
+---
+
+## 18. Final Constraints
+
+The Operations Guide defines production operational practices but does not replace architectural, implementation or business documentation.
+
+Operations Guide Version 1 specification complete.

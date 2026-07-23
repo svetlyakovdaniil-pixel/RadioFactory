@@ -1,13 +1,13 @@
 # CHANGELOG
 
-## Documentation Update 32B
+## Documentation Update 32C
 
-Expanded Operations Guide.
+Completed Operations Guide Version 1 specification.
 
 Added:
-- service lifecycle
-- monitoring
-- logging
-- backup
-- recovery
-- configuration management
+- incident management
+- planned maintenance
+- operational risk management
+- operations audit
+- continuous improvement
+- final constraints

@@ -1,13 +1,13 @@
 # CHANGELOG
 
-## Documentation Update 35C
+## Documentation Update 36A
 
-Completed Data Model Version 1 specification.
+Started Integration Guidelines Version 1.
 
 Added:
-- data quality
-- metadata management
-- data audit
-- change risk management
-- continuous improvement
-- final constraints
+- purpose
+- responsibilities
+- non-responsibilities
+- scope
+- integration principles
+- invariants

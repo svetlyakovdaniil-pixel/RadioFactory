@@ -1,64 +1,66 @@
-# Configuration Specification (Update 22B)
+# Configuration Specification (Update 22C)
 
-## 7. Configuration Files
+## 13. Observability
 
-Configuration files use explicit schemas.
+Configuration exposes:
 
-Unknown fields are rejected.
+- active profile
+- configuration version
+- reload status
+- validation status
+- configuration source summary
 
-Required values are validated during startup.
-
----
-
-## 8. Validation
-
-Validation includes:
-
-- required fields
-- type checking
-- range validation
-- dependency validation
-- duplicate detection
-
-Startup fails if validation fails.
+Configuration values marked as secrets are never exposed.
 
 ---
 
-## 9. Secrets
+## 14. Audit
 
-Secrets are separated from regular configuration.
+Every configuration change records:
 
-Requirements:
+- timestamp
+- actor
+- source
+- affected keys
+- correlationId
 
-- no hardcoded secrets
-- no logging of secrets
-- secure providers preferred
-
----
-
-## 10. Environment Profiles
-
-Supported profiles may include:
-
-- development
-- testing
-- staging
-- production
-
-Profiles inherit common configuration where appropriate.
+Audit history is immutable.
 
 ---
 
-## 11. Reloading
+## 15. Performance
 
-Reloadable configuration is explicitly marked.
+Configuration loading must be deterministic.
 
-Unsafe configuration requires service restart.
+Validation should execute before service startup.
+
+Reload operations should minimize service interruption.
 
 ---
 
-## 12. Compatibility
+## 16. Security
 
-Configuration changes must preserve backward compatibility whenever possible.
+Configuration storage must ensure:
 
-Breaking changes require migration guidance.
+- integrity
+- confidentiality of secrets
+- least privilege access
+- encrypted transport where applicable
+
+---
+
+## 17. Scalability
+
+Configuration supports multiple services and environments using the same schema.
+
+Shared configuration remains centrally managed where appropriate.
+
+---
+
+## 18. Architectural Constraints
+
+Configuration defines behavior but never business rules.
+
+Application code depends on configuration abstractions rather than storage mechanisms.
+
+Configuration Version 1 specification complete.

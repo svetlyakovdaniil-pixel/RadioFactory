@@ -1,13 +1,13 @@
 # CHANGELOG
 
-## Documentation Update 22B
+## Documentation Update 22C
 
-Expanded Configuration specification.
+Completed Configuration Version 1 specification.
 
 Added:
-- configuration file schema
-- validation rules
-- secret management
-- environment profiles
-- configuration reload
-- compatibility
+- observability
+- configuration audit
+- performance
+- security
+- scalability
+- architectural constraints

@@ -1,65 +1,63 @@
-# Deployment Specification (Update 24A)
+# Deployment Specification (Update 24B)
 
-## 1. Purpose
+## 7. Deployment Artifacts
 
-Deployment defines how RadioFactory is packaged, delivered, installed and started across supported environments.
+Every release artifact is immutable.
 
-Deployment must be deterministic, reproducible and auditable.
+Artifacts include:
 
----
+- application binaries
+- static assets
+- manifests
+- deployment metadata
 
-## 2. Responsibilities
-
-Deployment is responsible for:
-
-- service installation
-- application startup
-- dependency provisioning
-- environment preparation
-- release delivery
+Artifacts are uniquely identifiable.
 
 ---
 
-## 3. Non-Responsibilities
+## 8. Update Strategy
 
-Deployment never defines:
+Updates follow a controlled deployment process.
 
-- business rules
-- domain workflows
-- runtime decisions
-- user data
+Requirements:
 
----
-
-## 4. Deployment Model
-
-Deployment artifacts are immutable.
-
-Each release is uniquely versioned and traceable.
-
-Rollback always targets a previously released artifact.
+- ordered rollout
+- validation before activation
+- automatic failure detection
+- rollback support
 
 ---
 
-## 5. Target Environments
+## 9. Rollback
 
-Supported environments may include:
+Rollback restores the last verified release.
 
-- development
-- testing
-- staging
-- production
-
-Environment-specific configuration remains external.
+Rollback procedures are deterministic and documented.
 
 ---
 
-## 6. Invariants
+## 10. Migrations
 
-Deployment must be:
+Schema and data migrations execute in a controlled sequence.
 
-- reproducible
-- versioned
-- observable
-- deterministic
-- recoverable
+Migration failures prevent deployment completion.
+
+---
+
+## 11. Health Checks
+
+Services expose:
+
+- startup status
+- readiness
+- liveness
+
+Traffic is accepted only after readiness succeeds.
+
+---
+
+## 12. Dependency Lifecycle
+
+External dependencies are versioned.
+
+Dependency compatibility is validated before deployment.

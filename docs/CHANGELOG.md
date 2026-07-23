@@ -1,12 +1,13 @@
 # CHANGELOG
 
-## Documentation Update 24A
+## Documentation Update 24B
 
-Started comprehensive Deployment specification.
+Expanded Deployment specification.
 
 Added:
-- purpose
-- responsibilities
-- deployment model
-- target environments
-- invariants
+- deployment artifacts
+- update strategy
+- rollback
+- migrations
+- health checks
+- dependency lifecycle

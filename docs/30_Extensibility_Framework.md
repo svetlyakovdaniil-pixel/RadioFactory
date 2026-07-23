@@ -1,64 +1,47 @@
-# Extensibility Framework (Update 37A)
+# Extensibility Framework (Update 37B)
 
-## 1. Purpose
+## 7. Extension Points
 
-The Extensibility Framework defines common architectural principles for extending RadioFactory safely and consistently.
+Extension points are explicitly defined and documented.
 
----
-
-## 2. Responsibilities
-
-This document defines:
-
-- extension architecture
-- module boundaries
-- extension lifecycle
-- compatibility expectations
-- governance principles
+Each extension point specifies supported capabilities and constraints.
 
 ---
 
-## 3. Non-Responsibilities
+## 8. Module Contracts
 
-This document does not define:
+Modules communicate through stable, versioned contracts.
 
-- implementation details
-- deployment workflows
-- infrastructure configuration
-- business logic
+Internal implementation details remain encapsulated.
 
 ---
 
-## 4. Scope
+## 9. Plugin Loading
 
-Applies to:
+Plugin discovery and loading follow deterministic procedures.
 
-- plugins
-- modules
-- extension points
-- adapters
-- optional components
+Loading failures are isolated and reported.
 
 ---
 
-## 5. Design Principles
+## 10. Dependency Management
 
-Extensions emphasize:
+Dependencies between modules are explicit and minimized.
 
-- modularity
-- loose coupling
-- isolation
-- compatibility
-- maintainability
+Circular dependencies are prohibited.
 
 ---
 
-## 6. Invariants
+## 11. Component Isolation
 
-Every extension must be:
+Extensions operate within defined boundaries.
 
-- documented
-- versioned
-- testable
-- reviewable
-- replaceable
+Failures in one extension should not compromise unrelated components.
+
+---
+
+## 12. Compatibility
+
+Extensions declare supported framework versions and compatibility expectations.
+
+Breaking changes require versioned contracts.

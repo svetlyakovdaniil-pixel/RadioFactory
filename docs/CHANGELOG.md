@@ -1,13 +1,13 @@
 # CHANGELOG
 
-## Documentation Update 37A
+## Documentation Update 37B
 
-Started Extensibility Framework Version 1.
+Expanded Extensibility Framework.
 
 Added:
-- purpose
-- responsibilities
-- non-responsibilities
-- scope
-- design principles
-- invariants
+- extension points
+- module contracts
+- plugin loading
+- dependency management
+- component isolation
+- compatibility

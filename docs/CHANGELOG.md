@@ -1,13 +1,12 @@
 # CHANGELOG
 
-## Documentation Update 23C
+## Documentation Update 24A
 
-Completed Security Version 1 specification.
+Started comprehensive Deployment specification.
 
 Added:
-- security observability
-- security audit
-- incident response
-- performance
-- scalability
-- architectural constraints
+- purpose
+- responsibilities
+- deployment model
+- target environments
+- invariants

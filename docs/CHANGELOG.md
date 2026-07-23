@@ -1,13 +1,13 @@
 # CHANGELOG
 
-## Documentation Update 16C
+## Documentation Update 17A
 
-Completed YouTube Provider Version 1 specification.
+Started comprehensive FFmpeg specification.
 
 Added:
-- live monitoring
-- completion workflow
-- consistency rules
-- observability
-- security
-- implementation constraints
+- purpose
+- responsibilities
+- lifecycle
+- process ownership
+- command line
+- invariants

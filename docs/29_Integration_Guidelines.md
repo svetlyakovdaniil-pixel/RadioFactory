@@ -1,43 +1,47 @@
-# Integration Guidelines (Update 36B)
+# Integration Guidelines (Update 36C)
 
-## 7. Integration Contracts
+## 13. Integration Lifecycle
 
-Every integration defines a documented contract covering supported operations, payloads and compatibility expectations.
+Every integration has defined introduction, maintenance, deprecation and retirement phases.
 
----
-
-## 8. Message Exchange
-
-Message formats remain consistent and version-aware.
-
-Required and optional fields are explicitly documented.
+Lifecycle changes are communicated and documented.
 
 ---
 
-## 9. Error Handling
+## 14. Integration Audit
 
-Integration failures return predictable error information.
+Integrations are periodically reviewed for compliance, reliability and consistency.
 
-Retries distinguish transient failures from permanent errors.
-
----
-
-## 10. Timeouts and Retries
-
-Timeouts and retry policies are documented for every integration.
-
-Retry strategies avoid duplicate processing.
+Audit results are tracked until resolved.
 
 ---
 
-## 11. Idempotency
+## 15. Risk Management
 
-Repeated requests produce predictable results where supported.
+Integration risks are evaluated before implementation and major changes.
 
-Idempotent operations are clearly identified.
+Mitigation strategies are documented.
 
 ---
 
-## 12. Integration Monitoring
+## 16. Backward Compatibility
 
-Integrations expose operational metrics, health status and logging sufficient for diagnostics and auditing.
+Existing clients should continue operating during supported transition periods.
+
+Breaking changes require versioned interfaces.
+
+---
+
+## 17. Continuous Improvement
+
+Integration standards evolve through implementation feedback, operational metrics and architectural reviews.
+
+All improvements remain versioned.
+
+---
+
+## 18. Final Constraints
+
+These guidelines define conceptual integration standards and interoperability expectations without prescribing implementation technologies.
+
+Integration Guidelines Version 1 specification complete.

@@ -1,63 +1,62 @@
-# Deployment Specification (Update 24B)
+# Deployment Specification (Update 24C)
 
-## 7. Deployment Artifacts
+## 13. Deployment Observability
 
-Every release artifact is immutable.
+Deployment telemetry includes:
 
-Artifacts include:
+- deployment duration
+- deployment status
+- rollback status
+- health check results
+- deployment correlationId
 
-- application binaries
-- static assets
-- manifests
-- deployment metadata
-
-Artifacts are uniquely identifiable.
-
----
-
-## 8. Update Strategy
-
-Updates follow a controlled deployment process.
-
-Requirements:
-
-- ordered rollout
-- validation before activation
-- automatic failure detection
-- rollback support
+Deployment metrics are retained for operational analysis.
 
 ---
 
-## 9. Rollback
+## 14. Release Audit
 
-Rollback restores the last verified release.
+Every deployment records:
 
-Rollback procedures are deterministic and documented.
+- timestamp
+- operator
+- release version
+- target environment
+- deployment result
+- correlationId
 
----
-
-## 10. Migrations
-
-Schema and data migrations execute in a controlled sequence.
-
-Migration failures prevent deployment completion.
-
----
-
-## 11. Health Checks
-
-Services expose:
-
-- startup status
-- readiness
-- liveness
-
-Traffic is accepted only after readiness succeeds.
+Audit history is immutable.
 
 ---
 
-## 12. Dependency Lifecycle
+## 15. Performance
 
-External dependencies are versioned.
+Deployment minimizes service interruption.
 
-Dependency compatibility is validated before deployment.
+Validation executes before traffic is switched to a new release.
+
+---
+
+## 16. Resilience
+
+Deployment failures are isolated.
+
+Recovery procedures are deterministic and repeatable.
+
+---
+
+## 17. Scalability
+
+Deployment supports multiple environments and independent service updates.
+
+Parallel deployments must not violate consistency.
+
+---
+
+## 18. Architectural Constraints
+
+Deployment orchestrates delivery only.
+
+Business logic remains independent of deployment technology.
+
+Deployment Version 1 specification complete.

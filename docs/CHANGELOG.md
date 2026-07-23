@@ -1,13 +1,13 @@
 # CHANGELOG
 
-## Documentation Update 35B
+## Documentation Update 35C
 
-Expanded Data Model specification.
+Completed Data Model Version 1 specification.
 
 Added:
-- core entities
-- relationships
-- entity identification
-- data integrity
-- entity lifecycle
-- schema evolution
+- data quality
+- metadata management
+- data audit
+- change risk management
+- continuous improvement
+- final constraints

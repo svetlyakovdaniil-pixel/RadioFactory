@@ -1,50 +1,47 @@
-# Data Model (Update 35B)
+# Data Model (Update 35C)
 
-## 7. Core Entities
+## 13. Data Quality
 
-Each core entity has a unique purpose, lifecycle and ownership.
+Data quality is continuously monitored.
 
-Entity definitions remain technology-neutral.
-
----
-
-## 8. Relationships
-
-Relationships between entities are explicitly defined.
-
-Relationship cardinality and ownership are documented.
+Validation rules ensure completeness, consistency and correctness.
 
 ---
 
-## 9. Entity Identification
+## 14. Metadata Management
 
-Every persistent entity has a stable unique identifier.
+Metadata describing entities, relationships and schema versions is maintained alongside operational data.
 
-Identifiers are immutable after creation.
-
----
-
-## 10. Data Integrity
-
-Integrity rules ensure:
-
-- valid references
-- consistent state
-- controlled updates
-- predictable behavior
+Metadata changes are versioned.
 
 ---
 
-## 11. Entity Lifecycle
+## 15. Data Audit
 
-Entities progress through documented lifecycle states.
+Critical data modifications are auditable.
 
-State transitions follow defined business rules.
+Audit records support traceability and operational investigations.
 
 ---
 
-## 12. Schema Evolution
+## 16. Change Risk Management
 
-Schema changes are versioned, documented and reviewed.
+Schema and model changes are evaluated for operational and compatibility risks before adoption.
 
-Backward compatibility is maintained whenever practical.
+Mitigation plans are documented.
+
+---
+
+## 17. Continuous Improvement
+
+The data model evolves through documented proposals, architectural reviews and implementation feedback.
+
+All changes remain versioned and traceable.
+
+---
+
+## 18. Final Constraints
+
+The Data Model defines conceptual data standards and relationships but does not prescribe storage implementation details.
+
+Data Model Version 1 specification complete.

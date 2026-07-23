@@ -1,13 +1,13 @@
 # CHANGELOG
 
-## Documentation Update 15B
+## Documentation Update 15C
 
-Expanded Worker specification.
+Completed Worker Version 1 specification.
 
 Added:
-- FFmpeg lifecycle
-- command processing
-- heartbeat
-- watchdog
-- retry policy
-- thread safety
+- restart recovery
+- runtime reconciliation
+- graceful shutdown
+- failure escalation
+- observability metrics
+- implementation constraints

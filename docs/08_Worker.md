@@ -1,76 +1,80 @@
-# Worker Specification (Update 15B)
+# Worker Specification (Update 15C)
 
-## 7. FFmpeg Lifecycle
+## 13. Recovery After Restart
 
-Worker owns the encoder process.
+Worker startup recovery:
 
-Lifecycle:
+1. Load persisted Station state.
+2. Load persisted Broadcast state.
+3. Detect active encoder process.
+4. Reconcile runtime with persisted state.
+5. Resume monitoring loop.
 
-Created
-→ Starting
-→ Running
-→ Restarting
-→ Stopping
-→ Stopped
-
-A single active encoder process is allowed.
+Recovery must never create duplicate runtime objects.
 
 ---
 
-## 8. Command Processing
+## 14. Runtime Reconciliation
 
-Commands are processed sequentially.
+Worker compares:
 
-Rules:
+- persisted state
+- provider state
+- local runtime
+- operating system process state
 
-- FIFO queue
-- exactly one active command
-- cancellation is explicit
-- completion is acknowledged
-
----
-
-## 9. Heartbeat
-
-Worker periodically publishes:
-
-- uptime
-- current state
-- active broadcast
-- encoder status
-- last successful health check
-
-Missing heartbeats trigger diagnostics.
+Conflicts are resolved using deterministic reconciliation rules.
 
 ---
 
-## 10. Watchdog
+## 15. Graceful Shutdown
 
-Watchdog detects:
+Shutdown sequence:
 
-- hung encoder
-- stalled startup
-- dead process
-- excessive restart rate
+1. Stop accepting new commands.
+2. Finish active command.
+3. Flush pending events.
+4. Stop monitoring.
+5. Stop encoder.
+6. Persist final runtime.
+7. Exit.
 
-Watchdog never performs business decisions.
-
----
-
-## 11. Retry Policy
-
-Transient failures use exponential backoff.
-
-Permanent failures immediately transition to Failure.
-
-Retry history is persisted.
+Forced termination is handled separately.
 
 ---
 
-## 12. Thread Safety
+## 16. Failure Escalation
 
-Worker state is modified only inside the execution loop.
+Repeated failures move through:
 
-External components communicate through commands and events.
+Warning
+→ Recovery
+→ Failure
+→ Manual Intervention
 
-Shared mutable state is prohibited.
+Escalation policy is configurable.
+
+---
+
+## 17. Observability
+
+Required metrics:
+
+- worker uptime
+- queue length
+- recovery duration
+- restart count
+- command latency
+- shutdown duration
+
+Every operation carries a correlationId.
+
+---
+
+## 18. Implementation Constraints
+
+Worker is stateless regarding business rules.
+
+Only Station determines lifecycle decisions.
+
+Worker Version 1 specification complete.

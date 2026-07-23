@@ -1,13 +1,13 @@
 # CHANGELOG
 
-## Documentation Update 27C
+## Documentation Update 28A
 
-Completed Architecture Decisions Version 1 specification.
+Started comprehensive Glossary specification.
 
 Added:
-- architecture audit
-- architecture evolution
-- risk management
-- architecture quality
-- governance scalability
-- architectural constraints
+- purpose
+- responsibilities
+- scope
+- naming rules
+- maintenance
+- invariants

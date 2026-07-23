@@ -1,13 +1,12 @@
 # CHANGELOG
 
-## Documentation Update 25C
+## Documentation Update 26A
 
-Completed Testing Version 1 specification.
+Started comprehensive Operations specification.
 
 Added:
-- test observability
-- test audit
-- reliability
-- reporting
-- scalability
-- architectural constraints
+- purpose
+- responsibilities
+- operational model
+- operational environments
+- invariants

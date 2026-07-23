@@ -1,47 +1,47 @@
-# Platform Constraints (Update 38B)
+# Platform Constraints (Update 38C)
 
-## 7. Architectural Trade-offs
+## 13. Constraint Audit
 
-Architectural decisions balance flexibility, simplicity, performance and long-term maintainability.
+Architectural constraints are periodically reviewed for relevance, compliance and consistency.
 
-Trade-offs are documented before adoption.
-
----
-
-## 8. Scalability Constraints
-
-Scalability expectations are defined for all core platform components.
-
-Scaling strategies should preserve architectural consistency.
+Audit outcomes are documented and tracked.
 
 ---
 
-## 9. Maintainability Requirements
+## 14. Risk Management
 
-Platform evolution prioritizes readability, modularity and predictable behavior.
+Architectural risks are evaluated before major platform changes.
 
-Technical debt is tracked and managed.
-
----
-
-## 10. Performance Constraints
-
-Performance requirements are documented for critical platform capabilities.
-
-Optimizations must not compromise architectural integrity.
+Mitigation plans accompany approved exceptions.
 
 ---
 
-## 11. Platform Evolution
+## 15. Long-Term Stability
 
-Architectural evolution follows documented review and approval processes.
+Core architectural principles remain stable across platform evolution.
 
-Major changes require impact assessment.
+Changes require formal architectural review.
 
 ---
 
-## 12. Architectural Integrity
+## 16. Continuous Improvement
 
-Core architectural principles must remain consistent across all platform components.
+Platform constraints evolve through implementation feedback, operational experience and architecture reviews.
 
-Exceptions require explicit approval and documentation.
+All revisions are version-controlled.
+
+---
+
+## 17. Governance
+
+Constraint ownership, review responsibilities and approval authority are clearly defined.
+
+Governance decisions remain traceable.
+
+---
+
+## 18. Final Constraints
+
+This document defines conceptual architectural boundaries without prescribing implementation technologies.
+
+Platform Constraints Version 1 specification complete.

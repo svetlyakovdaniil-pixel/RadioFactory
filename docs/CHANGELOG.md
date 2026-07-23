@@ -1,13 +1,13 @@
 # CHANGELOG
 
-## Documentation Update 35A
+## Documentation Update 35B
 
-Started Data Model Version 1.
+Expanded Data Model specification.
 
 Added:
-- purpose
-- responsibilities
-- non-responsibilities
-- scope
-- data principles
-- invariants
+- core entities
+- relationships
+- entity identification
+- data integrity
+- entity lifecycle
+- schema evolution

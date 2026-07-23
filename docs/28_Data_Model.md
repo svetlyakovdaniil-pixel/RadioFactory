@@ -1,66 +1,50 @@
-# Data Model (Update 35A)
+# Data Model (Update 35B)
 
-## 1. Purpose
+## 7. Core Entities
 
-The Data Model defines the common principles for representing information throughout the RadioFactory platform.
+Each core entity has a unique purpose, lifecycle and ownership.
 
-Its objective is to ensure consistency, integrity and long-term evolution of data.
-
----
-
-## 2. Responsibilities
-
-This document defines:
-
-- core data concepts
-- entity relationships
-- identification principles
-- data lifecycle expectations
-- integrity requirements
+Entity definitions remain technology-neutral.
 
 ---
 
-## 3. Non-Responsibilities
+## 8. Relationships
 
-The Data Model does not define:
+Relationships between entities are explicitly defined.
 
-- database implementation
-- storage engines
-- business workflows
-- infrastructure architecture
+Relationship cardinality and ownership are documented.
 
 ---
 
-## 4. Scope
+## 9. Entity Identification
 
-The model applies to:
+Every persistent entity has a stable unique identifier.
 
-- application entities
-- configuration data
-- operational metadata
-- integration data
-- persistent records
+Identifiers are immutable after creation.
 
 ---
 
-## 5. Data Principles
+## 10. Data Integrity
 
-Data management emphasizes:
+Integrity rules ensure:
 
-- consistency
-- integrity
-- traceability
-- extensibility
-- minimal duplication
+- valid references
+- consistent state
+- controlled updates
+- predictable behavior
 
 ---
 
-## 6. Invariants
+## 11. Entity Lifecycle
 
-All managed data must be:
+Entities progress through documented lifecycle states.
 
-- identifiable
-- validated
-- documented
-- reviewable
-- version-aware
+State transitions follow defined business rules.
+
+---
+
+## 12. Schema Evolution
+
+Schema changes are versioned, documented and reviewed.
+
+Backward compatibility is maintained whenever practical.

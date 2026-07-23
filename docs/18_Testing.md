@@ -1,60 +1,64 @@
-# Testing Specification (Update 25B)
+# Testing Specification (Update 25C)
 
-## 7. Unit Testing
+## 13. Test Observability
 
-Unit tests validate isolated components.
+Testing exposes:
 
-Requirements:
+- execution duration
+- pass/fail ratio
+- flaky test rate
+- coverage trend
+- correlationId
 
-- deterministic execution
-- no external dependencies
-- fast execution
-- clear assertions
-
----
-
-## 8. Integration Testing
-
-Integration tests verify interaction between components.
-
-External services may be replaced by controlled test doubles where appropriate.
+Historical metrics support continuous improvement.
 
 ---
 
-## 9. End-to-End Testing
+## 14. Test Audit
 
-End-to-end tests validate complete user workflows.
+Every test run records:
 
-Scenarios represent production behavior.
+- timestamp
+- pipeline
+- commit
+- environment
+- result
+- correlationId
 
----
-
-## 10. Test Data
-
-Test data must be:
-
-- reproducible
-- isolated
-- versioned
-- disposable
-
-Sensitive production data is never used directly.
+Audit history is immutable.
 
 ---
 
-## 11. Performance Testing
+## 15. Reliability
 
-Performance tests measure:
+Tests must produce deterministic results.
 
-- latency
-- throughput
-- resource usage
-- scalability
+Flaky tests are identified and remediated before release.
 
 ---
 
-## 12. Continuous Integration
+## 16. Reporting
 
-Automated tests execute during CI before release.
+Reports summarize:
 
-Failing tests block deployment.
+- executed tests
+- failures
+- skipped tests
+- performance metrics
+- coverage
+
+---
+
+## 17. Scalability
+
+Test infrastructure supports parallel execution across multiple environments.
+
+Isolation prevents interference between concurrent runs.
+
+---
+
+## 18. Architectural Constraints
+
+Tests validate architecture without replacing production monitoring.
+
+Testing Version 1 specification complete.

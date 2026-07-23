@@ -1,13 +1,13 @@
 # CHANGELOG
 
-## Documentation Update 25B
+## Documentation Update 25C
 
-Expanded Testing specification.
+Completed Testing Version 1 specification.
 
 Added:
-- unit testing
-- integration testing
-- end-to-end testing
-- test data
-- performance testing
-- continuous integration
+- test observability
+- test audit
+- reliability
+- reporting
+- scalability
+- architectural constraints

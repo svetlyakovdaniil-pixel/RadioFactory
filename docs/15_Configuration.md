@@ -1,62 +1,64 @@
-# Configuration Specification (Update 22A)
+# Configuration Specification (Update 22B)
 
-## 1. Purpose
+## 7. Configuration Files
 
-Configuration defines runtime behavior without modifying application code.
+Configuration files use explicit schemas.
 
-Configuration must remain deterministic, auditable and reproducible.
+Unknown fields are rejected.
 
----
-
-## 2. Responsibilities
-
-Configuration is responsible for:
-
-- runtime parameters
-- feature flags
-- environment-specific values
-- service endpoints
-- operational limits
+Required values are validated during startup.
 
 ---
 
-## 3. Non-Responsibilities
+## 8. Validation
 
-Configuration never contains:
+Validation includes:
 
-- business logic
-- application workflow
-- mutable runtime state
-- user-generated data
+- required fields
+- type checking
+- range validation
+- dependency validation
+- duplicate detection
 
----
-
-## 4. Sources
-
-Configuration may originate from:
-
-- configuration files
-- environment variables
-- secret providers
-
-Source precedence is explicitly defined.
+Startup fails if validation fails.
 
 ---
 
-## 5. Configuration Model
+## 9. Secrets
 
-Configuration is loaded into immutable configuration objects.
+Secrets are separated from regular configuration.
 
-Consumers receive read-only views.
+Requirements:
+
+- no hardcoded secrets
+- no logging of secrets
+- secure providers preferred
 
 ---
 
-## 6. Invariants
+## 10. Environment Profiles
 
-Configuration must be:
+Supported profiles may include:
 
-- validated
-- deterministic
-- versioned
-- observable
-- reproducible
+- development
+- testing
+- staging
+- production
+
+Profiles inherit common configuration where appropriate.
+
+---
+
+## 11. Reloading
+
+Reloadable configuration is explicitly marked.
+
+Unsafe configuration requires service restart.
+
+---
+
+## 12. Compatibility
+
+Configuration changes must preserve backward compatibility whenever possible.
+
+Breaking changes require migration guidance.

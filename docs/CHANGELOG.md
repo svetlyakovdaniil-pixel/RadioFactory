@@ -1,12 +1,13 @@
 # CHANGELOG
 
-## Documentation Update 22A
+## Documentation Update 22B
 
-Started comprehensive Configuration specification.
+Expanded Configuration specification.
 
 Added:
-- purpose
-- responsibilities
-- configuration sources
-- immutable configuration model
-- invariants
+- configuration file schema
+- validation rules
+- secret management
+- environment profiles
+- configuration reload
+- compatibility

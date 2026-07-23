@@ -1,13 +1,13 @@
 # CHANGELOG
 
-## Documentation Update 38A
+## Documentation Update 38B
 
-Started Platform Constraints Version 1.
+Expanded Platform Constraints.
 
 Added:
-- purpose
-- responsibilities
-- non-responsibilities
-- scope
-- guiding principles
-- invariants
+- architectural trade-offs
+- scalability constraints
+- maintainability requirements
+- performance constraints
+- platform evolution
+- architectural integrity

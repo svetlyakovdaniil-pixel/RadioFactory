@@ -1,64 +1,47 @@
-# Platform Constraints (Update 38A)
+# Platform Constraints (Update 38B)
 
-## 1. Purpose
+## 7. Architectural Trade-offs
 
-The Platform Constraints document defines the architectural boundaries that remain stable throughout the evolution of RadioFactory.
+Architectural decisions balance flexibility, simplicity, performance and long-term maintainability.
 
----
-
-## 2. Responsibilities
-
-This document defines:
-
-- platform constraints
-- architectural boundaries
-- long-term stability principles
-- scalability expectations
-- maintainability requirements
+Trade-offs are documented before adoption.
 
 ---
 
-## 3. Non-Responsibilities
+## 8. Scalability Constraints
 
-This document does not define:
+Scalability expectations are defined for all core platform components.
 
-- implementation details
-- business workflows
-- deployment procedures
-- infrastructure configuration
+Scaling strategies should preserve architectural consistency.
 
 ---
 
-## 4. Scope
+## 9. Maintainability Requirements
 
-These constraints apply to:
+Platform evolution prioritizes readability, modularity and predictable behavior.
 
-- all services
-- all modules
-- shared libraries
-- public interfaces
-- internal architecture
+Technical debt is tracked and managed.
 
 ---
 
-## 5. Guiding Principles
+## 10. Performance Constraints
 
-Platform evolution prioritizes:
+Performance requirements are documented for critical platform capabilities.
 
-- consistency
-- simplicity
-- predictability
-- scalability
-- sustainability
+Optimizations must not compromise architectural integrity.
 
 ---
 
-## 6. Invariants
+## 11. Platform Evolution
 
-Core architectural constraints must remain:
+Architectural evolution follows documented review and approval processes.
 
-- documented
-- reviewable
-- versioned
-- enforceable
-- understandable
+Major changes require impact assessment.
+
+---
+
+## 12. Architectural Integrity
+
+Core architectural principles must remain consistent across all platform components.
+
+Exceptions require explicit approval and documentation.

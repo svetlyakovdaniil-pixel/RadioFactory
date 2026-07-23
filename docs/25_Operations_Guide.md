@@ -1,66 +1,58 @@
-# Operations Guide (Update 32A)
+# Operations Guide (Update 32B)
 
-## 1. Purpose
+## 7. Service Lifecycle
 
-The Operations Guide defines operational practices required to run and maintain the RadioFactory platform.
+Operational procedures define how services are:
 
-Its goal is stable, reliable and predictable production operation.
+- started
+- stopped
+- restarted
+- validated
 
----
-
-## 2. Responsibilities
-
-This guide defines:
-
-- operational responsibilities
-- production procedures
-- service lifecycle
-- operational validation
-- maintenance activities
+Each action is documented.
 
 ---
 
-## 3. Non-Responsibilities
+## 8. Monitoring
 
-This guide does not define:
+Monitoring continuously observes:
 
-- software architecture
-- implementation details
-- business requirements
-- development workflow
-
----
-
-## 4. Scope
-
-Operational guidance applies to:
-
-- production services
-- infrastructure
-- automation
-- scheduled jobs
-- operational documentation
-
----
-
-## 5. Operational Principles
-
-Operations prioritize:
-
-- stability
+- service health
+- resource utilization
 - availability
-- repeatability
-- observability
-- recoverability
+- operational events
+
+Alerts are reviewed promptly.
 
 ---
 
-## 6. Invariants
+## 9. Logging
 
-Operational procedures must be:
+Operational logs provide sufficient information for diagnostics and auditing.
 
-- documented
-- reproducible
-- traceable
-- reviewable
-- continuously maintained
+Log retention follows documented policies.
+
+---
+
+## 10. Backup
+
+Backup procedures define:
+
+- protected data
+- backup frequency
+- verification
+- restoration readiness
+
+---
+
+## 11. Recovery
+
+Recovery procedures minimize service disruption.
+
+Recovery steps are tested periodically.
+
+---
+
+## 12. Configuration Management
+
+Operational configuration is versioned, documented and reviewed before production changes.

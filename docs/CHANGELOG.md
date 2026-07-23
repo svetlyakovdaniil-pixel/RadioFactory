@@ -1,13 +1,13 @@
 # CHANGELOG
 
-## Documentation Update 32A
+## Documentation Update 32B
 
-Started Operations Guide Version 1.
+Expanded Operations Guide.
 
 Added:
-- purpose
-- responsibilities
-- non-responsibilities
-- scope
-- operational principles
-- invariants
+- service lifecycle
+- monitoring
+- logging
+- backup
+- recovery
+- configuration management

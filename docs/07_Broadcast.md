@@ -1,73 +1,75 @@
-# Broadcast Specification (Update 14B)
+# Broadcast Specification (Update 14C)
 
-## 8. Broadcast Creation Sequence
+## 14. Broadcast Completion
 
-1. Station requests Broadcast creation.
-2. Provider validates configuration.
-3. YouTube Broadcast is created.
-4. Stream is bound.
-5. Runtime metadata is persisted.
-6. Broadcast enters Prepared.
+Completion begins only after Station issues Finish.
 
-If any step fails, partial resources must be cleaned up.
+Steps:
 
----
+1. Stop encoder.
+2. Confirm stream termination.
+3. Finalize YouTube Broadcast.
+4. Persist final metadata.
+5. Publish BroadcastFinished.
+6. Release runtime resources.
 
-## 9. State Transition Rules
-
-Created -> Prepared
-Prepared -> WaitingStreamReady
-WaitingStreamReady -> Streaming
-Streaming -> Recovering
-Recovering -> Streaming
-Streaming -> Finishing
-Finishing -> Finished
-
-Invalid transitions are rejected.
+Completion is idempotent.
 
 ---
 
-## 10. Recovery Model
+## 15. Cleanup
 
-Recovery reconstructs runtime using persisted metadata.
+Cleanup removes only temporary runtime resources.
 
-Recovery never creates a second Broadcast while one already exists.
+Persistent audit data is never deleted.
 
-Recovery resumes from the last confirmed state.
-
----
-
-## 11. Provider Interaction
-
-Broadcast never calls YouTube APIs directly.
-
-All external operations go through the Provider abstraction.
-
-Provider returns normalized results and domain errors.
+Cleanup may safely execute multiple times.
 
 ---
 
-## 12. Failure Categories
+## 16. Idempotency Rules
 
-- Configuration
-- Authentication
-- API
-- Network
-- Stream
-- Unknown
+Repeated requests to:
 
-Each failure maps to a deterministic recovery policy.
+- Finish
+- Cleanup
+- Recover
+
+must always produce the same final state.
+
+Duplicate external API calls must be avoided.
 
 ---
 
-## 13. Sequence Overview
+## 17. Consistency Rules
 
-Station
- -> Broadcast
- -> Provider
- -> YouTube
- <- Provider
- <- Broadcast
- <- Station
+Broadcast state in memory,
+persistent storage,
+and Dashboard
+must converge to the same confirmed state.
 
-Every request has a matching completion event.
+No optimistic UI state is authoritative.
+
+---
+
+## 18. Observability
+
+Metrics:
+
+- startup duration
+- streaming duration
+- recovery count
+- failure count
+- cleanup duration
+
+Tracing uses correlationId across all operations.
+
+---
+
+## 19. Implementation Requirements
+
+Business logic is deterministic.
+Infrastructure adapters remain replaceable.
+No Provider-specific logic leaks into the domain.
+
+Broadcast Version 1 specification complete.

@@ -1,13 +1,13 @@
 # CHANGELOG
 
-## Documentation Update 14B
+## Documentation Update 14C
 
-Expanded Broadcast specification.
+Completed Broadcast Version 1 specification.
 
 Added:
-- creation sequence
-- state transitions
-- recovery model
-- provider interaction
-- failure categories
-- sequence overview
+- completion workflow
+- cleanup rules
+- idempotency
+- consistency
+- observability
+- implementation requirements

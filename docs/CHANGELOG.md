@@ -1,8 +1,10 @@
 # CHANGELOG
 
-## Documentation Update 42-44
+## Documentation Update 45-49
 
 Completed:
-- Deployment Governance V1
-- Release Governance V1
-- Quality Governance V1
+- Security Governance V1
+- Observability Governance V1
+- Backup Governance V1
+- Incident Governance V1
+- Maintenance Governance V1

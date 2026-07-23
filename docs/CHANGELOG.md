@@ -1,13 +1,13 @@
 # CHANGELOG
 
-## Documentation Update 36C
+## Documentation Update 37A
 
-Completed Integration Guidelines Version 1.
+Started Extensibility Framework Version 1.
 
 Added:
-- integration lifecycle
-- integration audit
-- risk management
-- backward compatibility
-- continuous improvement
-- final constraints
+- purpose
+- responsibilities
+- non-responsibilities
+- scope
+- design principles
+- invariants

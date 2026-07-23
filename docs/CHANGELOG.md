@@ -1,13 +1,12 @@
 # CHANGELOG
 
-## Documentation Update 19C
+## Documentation Update 20A
 
-Completed Storage Version 1 specification.
+Started comprehensive Dashboard specification.
 
 Added:
-- observability
-- audit
-- retention policy
-- security
-- performance
-- architectural constraints
+- purpose
+- responsibilities
+- dashboard data model
+- update model
+- invariants

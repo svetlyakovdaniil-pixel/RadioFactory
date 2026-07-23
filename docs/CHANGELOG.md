@@ -1,13 +1,13 @@
 # CHANGELOG
 
-## Documentation Update 26B
+## Documentation Update 26C
 
-Expanded Operations specification.
+Completed Operations Version 1 specification.
 
 Added:
-- monitoring
-- logging
-- alerting
-- backup
-- disaster recovery
-- operational runbooks
+- operational observability
+- operational audit
+- performance
+- operational security
+- scalability
+- architectural constraints

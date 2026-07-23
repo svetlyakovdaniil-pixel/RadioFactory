@@ -1,12 +1,13 @@
 # CHANGELOG
 
-## Documentation Update 25A
+## Documentation Update 25B
 
-Started comprehensive Testing specification.
+Expanded Testing specification.
 
 Added:
-- purpose
-- responsibilities
-- testing strategy
-- test levels
-- invariants
+- unit testing
+- integration testing
+- end-to-end testing
+- test data
+- performance testing
+- continuous integration

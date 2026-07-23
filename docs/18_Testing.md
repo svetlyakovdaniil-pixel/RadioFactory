@@ -1,60 +1,60 @@
-# Testing Specification (Update 25A)
+# Testing Specification (Update 25B)
 
-## 1. Purpose
+## 7. Unit Testing
 
-Testing provides confidence that RadioFactory behaves according to its specifications.
+Unit tests validate isolated components.
 
-Testing is continuous throughout the lifecycle.
+Requirements:
 
----
-
-## 2. Responsibilities
-
-Testing verifies:
-
-- functional correctness
-- integrations
-- regressions
-- reliability
-- deployment readiness
+- deterministic execution
+- no external dependencies
+- fast execution
+- clear assertions
 
 ---
 
-## 3. Non-Responsibilities
+## 8. Integration Testing
 
-Testing does not replace:
+Integration tests verify interaction between components.
 
-- business decisions
-- production monitoring
-- operational procedures
+External services may be replaced by controlled test doubles where appropriate.
 
 ---
 
-## 4. Testing Strategy
+## 9. End-to-End Testing
 
-Testing follows a layered approach.
+End-to-end tests validate complete user workflows.
 
-Higher-level tests complement lower-level tests.
-
----
-
-## 5. Test Levels
-
-Supported levels:
-
-- unit
-- integration
-- system
-- end-to-end
+Scenarios represent production behavior.
 
 ---
 
-## 6. Invariants
+## 10. Test Data
 
-Tests must be:
+Test data must be:
 
-- repeatable
-- deterministic
-- automated where practical
+- reproducible
 - isolated
-- traceable
+- versioned
+- disposable
+
+Sensitive production data is never used directly.
+
+---
+
+## 11. Performance Testing
+
+Performance tests measure:
+
+- latency
+- throughput
+- resource usage
+- scalability
+
+---
+
+## 12. Continuous Integration
+
+Automated tests execute during CI before release.
+
+Failing tests block deployment.

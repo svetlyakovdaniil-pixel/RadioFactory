@@ -1,172 +1,129 @@
-# Station Specification (Update 13A)
+# Station Specification (Update 13B)
 
-# 1. Purpose
+# 9. Pending LIVE Package
 
-Station is the central domain object of RadioFactory.
+Pending LIVE Package is an immutable snapshot describing everything required
+to start exactly one Broadcast.
 
-A Station represents one autonomous automation pipeline capable of preparing,
-starting, monitoring, recovering and stopping one continuous YouTube stream.
-
-Station is responsible for business decisions.
-
-Station is NOT responsible for:
-
-- FFmpeg implementation;
-- Dashboard rendering;
-- direct YouTube API calls;
-- filesystem implementation details.
-
----
-
-# 2. Responsibilities
-
-Station is responsible for:
-
-- lifecycle management;
-- media selection requests;
-- recovery decisions;
-- runtime supervision;
-- event publication;
-- interaction with Workspace.
-
----
-
-# 3. Lifecycle
-
-Idle
-↓
-Preparing
-↓
-Creating Broadcast
-↓
-Waiting Stream Ready
-↓
-Starting Encoder
-↓
-Running
-↓
-Stopping
-↓
-Cleanup
-↓
-Idle
-
-Failure may occur from every active state.
-
----
-
-# 4. Station State
-
-Persistent State
+It contains:
 
 - StationId
-- Name
-- Configuration
-- UserIntent
-- Recovery Metadata
+- Target YouTube Channel
+- Selected audio playlist
+- Selected loop video
+- Stream title
+- Description
+- Thumbnail reference
+- Stream key reference
+- Planned start parameters
+- Generated metadata
 
-Runtime State
+Once created, the package is never modified.
 
-- Active Broadcast
-- Current Track
-- Playback Position
-- Active FFmpeg PID
-- Runtime Timers
-
-Runtime state must never be considered authoritative after process restart.
-
-It is reconstructed.
+If any element changes, the package is discarded and a new one is built.
 
 ---
 
-# 5. Command Processing
+# 10. Start Algorithm
 
-Accepted commands:
+Normal start sequence:
 
-- Start
-- Stop
-- Force Stop
-- Restart
-- Validate Library
-- Refresh Media
+1. Verify UserIntent == Running.
+2. Verify Station is Idle.
+3. Validate media library.
+4. Build Pending LIVE Package.
+5. Reserve Station runtime.
+6. Ask Worker to create YouTube Broadcast.
+7. Wait until stream_ready.
+8. Launch FFmpeg.
+9. Verify encoder health.
+10. Publish StationStarted.
 
-Rules
-
-Exactly one lifecycle command may execute simultaneously.
-
-Repeated Start while Running returns Success(NoOp).
-
-Repeated Stop while Idle returns Success(NoOp).
-
-Commands are immutable.
+If any mandatory step fails,
+the sequence stops immediately and enters recovery or error handling.
 
 ---
 
-# 6. Events
+# 11. Worker Interaction
 
-Station publishes:
+Station never manipulates FFmpeg directly.
 
-- StationPreparing
-- StationStarted
-- BroadcastCreated
-- BroadcastRecovered
-- TrackChanged
-- StationStopping
-- StationStopped
-- StationFailed
+Worker responsibilities:
 
-Events describe facts.
+- launch encoder;
+- stop encoder;
+- monitor encoder;
+- report status;
+- collect runtime metrics.
 
-Events never request work.
+Station responsibilities:
 
----
-
-# 7. Invariants
-
-The following rules MUST NEVER be violated.
-
-1. One Station owns at most one active Broadcast.
-
-2. Station never manipulates another Station.
-
-3. User Stop has priority over automatic recovery.
-
-4. Cleanup always completes before a new Broadcast starts.
-
-5. Pending LIVE Package is immutable once created.
-
-6. Runtime failures never modify configuration.
+- decide WHEN actions happen;
+- validate state;
+- publish events.
 
 ---
 
-# 8. Edge Cases
+# 12. Broadcast Interaction
 
-Application restart during Preparing.
+Station owns Broadcast lifecycle.
 
-Required behaviour:
+Broadcast never decides:
 
-- restore intent;
-- inspect state;
-- continue preparation if safe;
-- otherwise restart preparation cleanly.
+- when to start;
+- when to stop;
+- which media to use.
 
-Application restart during Running.
+Broadcast reports facts.
 
-Required behaviour:
-
-- inspect Broadcast;
-- decide recovery strategy;
-- restore playback when allowed.
-
-Unexpected Worker crash.
-
-Required behaviour:
-
-- Worker replaced;
-- Station state preserved;
-- duplicate Broadcast prohibited.
+Station decides actions.
 
 ---
 
-This is Part A of the complete Station specification.
-Subsequent updates will extend this SAME file rather than creating new files.
+# 13. Internal Timers
+
+Station maintains logical timers such as:
+
+- startup timeout;
+- stream_ready timeout;
+- health check interval;
+- recovery timeout;
+- graceful stop timeout.
+
+Timer expiration creates domain events.
+
+Timers never execute business logic directly.
+
+---
+
+# 14. State Transition Rules
+
+Idle -> Preparing
+
+Allowed only when:
+- UserIntent = Running
+- no active Broadcast
+
+Preparing -> Starting
+
+Allowed only after Pending LIVE Package is complete.
+
+Starting -> Running
+
+Allowed only after encoder verification.
+
+Running -> Stopping
+
+Only user request or planned shutdown.
+
+Stopping -> Cleanup
+
+Always mandatory.
+
+Cleanup -> Idle
+
+Only after runtime resources are released.
+
+No transition may bypass Cleanup after a normal stop.
+
+This document replaces the previous version of 05_Station.md and extends it.

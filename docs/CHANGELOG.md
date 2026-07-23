@@ -1,16 +1,12 @@
 # CHANGELOG
 
-## Documentation Update 13A
+## Documentation Update 13B
 
-Expanded Station specification:
+Expanded Station specification with:
 
-- purpose
-- responsibilities
-- lifecycle
-- persistent/runtime state
-- commands
-- events
-- invariants
-- edge cases
-
-Beginning of full Station specification.
+- Pending LIVE Package
+- startup algorithm
+- Worker interaction
+- Broadcast interaction
+- internal timers
+- detailed transition rules

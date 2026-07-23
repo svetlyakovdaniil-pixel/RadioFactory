@@ -1,47 +1,47 @@
-# Project Glossary (Update 39B)
+# Project Glossary (Update 39C)
 
-## 7. Naming Conventions
+## 13. Terminology Audit
 
-Project terminology follows consistent naming conventions.
+Terminology is periodically reviewed for consistency, accuracy and relevance.
 
-Preferred terms are documented and reused across all artifacts.
-
----
-
-## 8. Abbreviations
-
-Approved abbreviations are explicitly defined.
-
-Undefined abbreviations should not appear in official documentation.
+Audit findings are documented and tracked.
 
 ---
 
-## 9. Architectural Vocabulary
+## 14. Terminology Risk Management
 
-Architectural terms have precise definitions shared across documentation and implementation.
+Potential ambiguity, duplication and conflicting terminology are evaluated before adoption.
 
-Terminology remains technology-neutral where practical.
-
----
-
-## 10. Introducing New Terms
-
-New terms require documented definitions, review and approval before adoption.
-
-Synonyms should be minimized.
+Mitigation actions are documented.
 
 ---
 
-## 11. Glossary Lifecycle
+## 15. Continuous Improvement
 
-Glossary entries evolve through controlled updates.
+The glossary evolves through architectural reviews, implementation feedback and documentation improvements.
 
-Deprecated terms remain documented until retirement.
+All revisions remain version-controlled.
 
 ---
 
-## 12. Terminology Compatibility
+## 16. Glossary Governance
 
-Changes in terminology preserve readability and continuity across documentation versions.
+Ownership, approval responsibilities and maintenance processes are clearly defined.
 
-Breaking terminology changes require migration guidance.
+Governance decisions remain traceable.
+
+---
+
+## 17. Long-Term Consistency
+
+Terminology stability is preserved across documentation versions whenever practical.
+
+Major terminology changes require migration guidance.
+
+---
+
+## 18. Final Constraints
+
+This document defines conceptual terminology standards without prescribing implementation details.
+
+Project Glossary Version 1 specification complete.

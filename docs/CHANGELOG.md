@@ -1,13 +1,13 @@
 # CHANGELOG
 
-## Documentation Update 23B
+## Documentation Update 23C
 
-Expanded Security specification.
+Completed Security Version 1 specification.
 
 Added:
-- authentication
-- authorization
-- secret management
-- secure storage
-- transport security
-- service protection
+- security observability
+- security audit
+- incident response
+- performance
+- scalability
+- architectural constraints

@@ -1,55 +1,64 @@
-# Security Specification (Update 23B)
+# Security Specification (Update 23C)
 
-## 7. Authentication
+## 13. Security Observability
 
-Authentication verifies caller identity before protected operations.
+Security telemetry includes:
 
-Requirements:
+- authentication failures
+- authorization failures
+- suspicious activity
+- secret access events
+- transport security events
 
-- strong authentication
-- session validation
-- token expiration
-- revocation support
-
----
-
-## 8. Authorization
-
-Authorization is role-based.
-
-Every request is evaluated using least-privilege principles.
+All security events include correlationId.
 
 ---
 
-## 9. Secret Management
+## 14. Security Audit
 
-Secrets are:
+Every privileged operation records:
 
-- externally managed
-- rotated regularly
-- never hardcoded
-- never logged
+- timestamp
+- actor
+- role
+- operation
+- target
+- correlationId
 
----
-
-## 10. Secure Storage
-
-Sensitive data is protected using encryption where applicable.
-
-Integrity checks detect unauthorized modification.
+Audit records are immutable and tamper-evident.
 
 ---
 
-## 11. Transport Security
+## 15. Incident Response
 
-All external communication uses secure transport.
+Security incidents are classified by severity.
 
-Certificates are validated before trust is established.
+Detection, notification and response procedures are documented.
+
+Recovery actions are auditable.
 
 ---
 
-## 12. Service Protection
+## 16. Performance
 
-Internal services authenticate each other.
+Security controls should minimize operational overhead.
 
-Administrative interfaces require additional protection.
+Critical validation executes before protected operations.
+
+---
+
+## 17. Scalability
+
+Security policies remain consistent across multiple services and deployments.
+
+Centralized identity and policy management are preferred.
+
+---
+
+## 18. Architectural Constraints
+
+Security is enforced at architectural boundaries.
+
+Business logic never implements authentication or authorization directly.
+
+Security Version 1 specification complete.

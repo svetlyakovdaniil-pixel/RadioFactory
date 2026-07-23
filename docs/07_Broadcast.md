@@ -1,99 +1,73 @@
-# Broadcast Specification (Update 14A)
+# Broadcast Specification (Update 14B)
 
-# 1. Purpose
+## 8. Broadcast Creation Sequence
 
-Broadcast represents exactly one YouTube LIVE session.
+1. Station requests Broadcast creation.
+2. Provider validates configuration.
+3. YouTube Broadcast is created.
+4. Stream is bound.
+5. Runtime metadata is persisted.
+6. Broadcast enters Prepared.
 
-It is created by Station and exists until cleanup completes.
-
-Broadcast never decides business logic.
-
----
-
-# 2. Responsibilities
-
-Broadcast is responsible for:
-
-- identity of the LIVE session;
-- runtime lifecycle;
-- recovery metadata;
-- timing information;
-- completion status.
-
-Broadcast is NOT responsible for:
-
-- media selection;
-- scheduling;
-- user commands;
-- dashboard rendering.
+If any step fails, partial resources must be cleaned up.
 
 ---
 
-# 3. Lifecycle
+## 9. State Transition Rules
 
-Created
-↓
-Prepared
-↓
-WaitingStreamReady
-↓
-Streaming
-↓
-Recovering
-↓
-Finishing
-↓
-Finished
+Created -> Prepared
+Prepared -> WaitingStreamReady
+WaitingStreamReady -> Streaming
+Streaming -> Recovering
+Recovering -> Streaming
+Streaming -> Finishing
+Finishing -> Finished
 
-Failed state may be entered from any active phase.
+Invalid transitions are rejected.
 
 ---
 
-# 4. Identity
+## 10. Recovery Model
 
-Required identifiers:
+Recovery reconstructs runtime using persisted metadata.
 
-- BroadcastId
-- StationId
-- YouTubeBroadcastId
+Recovery never creates a second Broadcast while one already exists.
 
-These identifiers never change.
+Recovery resumes from the last confirmed state.
 
 ---
 
-# 5. Runtime Data
+## 11. Provider Interaction
 
-Runtime:
+Broadcast never calls YouTube APIs directly.
 
-- stream health
-- encoder state
-- playback position
-- recovery attempt count
+All external operations go through the Provider abstraction.
 
-Persistent:
-
-- creation time
-- finish time
-- recovery history
+Provider returns normalized results and domain errors.
 
 ---
 
-# 6. Invariants
+## 12. Failure Categories
 
-1. One Broadcast belongs to exactly one Station.
-2. One Station owns at most one active Broadcast.
-3. Recovery never duplicates Broadcast identity.
-4. Finished Broadcasts are immutable.
+- Configuration
+- Authentication
+- API
+- Network
+- Stream
+- Unknown
+
+Each failure maps to a deterministic recovery policy.
 
 ---
 
-# 7. Domain Events
+## 13. Sequence Overview
 
-- BroadcastCreated
-- BroadcastStarted
-- BroadcastRecovered
-- BroadcastFinishing
-- BroadcastFinished
-- BroadcastFailed
+Station
+ -> Broadcast
+ -> Provider
+ -> YouTube
+ <- Provider
+ <- Broadcast
+ <- Station
 
-Events describe completed facts only.
+Every request has a matching completion event.

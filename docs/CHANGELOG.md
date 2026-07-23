@@ -1,14 +1,13 @@
 # CHANGELOG
 
-## Documentation Update 14A
+## Documentation Update 14B
 
-Started comprehensive Broadcast specification.
+Expanded Broadcast specification.
 
 Added:
-- purpose
-- responsibilities
-- lifecycle
-- identity
-- runtime model
-- invariants
-- domain events
+- creation sequence
+- state transitions
+- recovery model
+- provider interaction
+- failure categories
+- sequence overview

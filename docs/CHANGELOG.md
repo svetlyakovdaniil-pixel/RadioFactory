@@ -1,13 +1,13 @@
 # CHANGELOG
 
-## Documentation Update 15A
+## Documentation Update 15B
 
-Started comprehensive Worker specification.
+Expanded Worker specification.
 
 Added:
-- purpose
-- responsibilities
-- startup
-- main loop
-- invariants
-- domain events
+- FFmpeg lifecycle
+- command processing
+- heartbeat
+- watchdog
+- retry policy
+- thread safety

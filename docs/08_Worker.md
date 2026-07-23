@@ -1,61 +1,76 @@
-# Worker Specification (Update 15A)
+# Worker Specification (Update 15B)
 
-## 1. Purpose
+## 7. FFmpeg Lifecycle
 
-Worker executes the Station lifecycle.
+Worker owns the encoder process.
 
-Worker contains orchestration only and never owns business decisions.
+Lifecycle:
 
----
+Created
+→ Starting
+→ Running
+→ Restarting
+→ Stopping
+→ Stopped
 
-## 2. Responsibilities
-
-- execute lifecycle commands
-- coordinate Provider operations
-- control encoder processes
-- monitor runtime health
-- publish execution events
-
-Worker never stores business state.
+A single active encoder process is allowed.
 
 ---
 
-## 3. Startup
+## 8. Command Processing
 
-1. Load configuration.
-2. Restore Station.
-3. Restore active Broadcast.
-4. Validate runtime.
-5. Start monitoring loop.
+Commands are processed sequentially.
 
----
+Rules:
 
-## 4. Main Loop
-
-Worker repeatedly:
-
-- processes commands
-- checks timers
-- verifies health
-- dispatches events
-
-Loop iterations must be deterministic.
+- FIFO queue
+- exactly one active command
+- cancellation is explicit
+- completion is acknowledged
 
 ---
 
-## 5. Invariants
+## 9. Heartbeat
 
-- One Worker controls one Station.
-- Commands execute sequentially.
-- No concurrent lifecycle transitions.
-- Runtime decisions are reproducible.
+Worker periodically publishes:
+
+- uptime
+- current state
+- active broadcast
+- encoder status
+- last successful health check
+
+Missing heartbeats trigger diagnostics.
 
 ---
 
-## 6. Domain Events
+## 10. Watchdog
 
-- WorkerStarted
-- WorkerStopped
-- WorkerRecovered
-- WorkerHealthChanged
-- WorkerFailureDetected
+Watchdog detects:
+
+- hung encoder
+- stalled startup
+- dead process
+- excessive restart rate
+
+Watchdog never performs business decisions.
+
+---
+
+## 11. Retry Policy
+
+Transient failures use exponential backoff.
+
+Permanent failures immediately transition to Failure.
+
+Retry history is persisted.
+
+---
+
+## 12. Thread Safety
+
+Worker state is modified only inside the execution loop.
+
+External components communicate through commands and events.
+
+Shared mutable state is prohibited.

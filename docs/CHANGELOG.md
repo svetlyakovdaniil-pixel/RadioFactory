@@ -1,13 +1,13 @@
 # CHANGELOG
 
-## Documentation Update 33B
+## Documentation Update 33C
 
-Expanded Security Model specification.
+Completed Security Model Version 1 specification.
 
 Added:
-- authentication
-- authorization
-- secret management
-- data protection
-- security logging
-- secure configuration
+- security incident management
+- security risk management
+- security audit
+- compliance
+- continuous improvement
+- final constraints

@@ -1,50 +1,47 @@
-# Security Model (Update 33B)
+# Security Model (Update 33C)
 
-## 7. Authentication
+## 13. Security Incident Management
 
-Authentication verifies user and service identities before granting access.
+Security incidents are identified, classified, documented and tracked until resolution.
 
-Authentication mechanisms are centrally managed and periodically reviewed.
-
----
-
-## 8. Authorization
-
-Authorization follows the principle of least privilege.
-
-Permissions are assigned according to operational responsibilities.
+Post-incident reviews define corrective and preventive actions.
 
 ---
 
-## 9. Secret Management
+## 14. Security Risk Management
 
-Secrets are:
+Security risks are continuously identified, assessed and prioritized.
 
-- securely stored
-- access controlled
-- periodically rotated
-- never embedded in source code
+Mitigation plans are documented and periodically reviewed.
 
 ---
 
-## 10. Data Protection
+## 15. Security Audit
 
-Sensitive information is protected during storage, processing and transmission.
+Security controls and processes are periodically audited to verify effectiveness and compliance.
 
-Protection mechanisms are documented.
-
----
-
-## 11. Security Logging
-
-Security-relevant events are logged for auditing and incident investigation.
-
-Log integrity is preserved.
+Audit findings are documented and assigned for remediation.
 
 ---
 
-## 12. Secure Configuration
+## 16. Compliance
 
-Production configuration follows documented security baselines.
+Security practices align with applicable organizational and regulatory requirements.
 
-Configuration changes are reviewed before deployment.
+Compliance evidence is retained where required.
+
+---
+
+## 17. Continuous Improvement
+
+Security practices evolve through audits, incident analysis, metrics and documented improvement proposals.
+
+Changes remain versioned and traceable.
+
+---
+
+## 18. Final Constraints
+
+The Security Model defines security governance and protection principles but does not replace implementation, architectural or operational documentation.
+
+Security Model Version 1 specification complete.

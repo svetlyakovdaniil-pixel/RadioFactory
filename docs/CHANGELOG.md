@@ -1,13 +1,5 @@
 # CHANGELOG
 
-## Documentation Update 40B
+## Documentation Update 41
 
-Expanded Documentation Governance.
-
-Added:
-- document lifecycle
-- review process
-- version management
-- change management
-- publication standards
-- documentation quality
+Added complete Configuration Governance Version 1 specification.

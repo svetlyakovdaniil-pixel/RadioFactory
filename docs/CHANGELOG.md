@@ -1,13 +1,12 @@
 # CHANGELOG
 
-## Documentation Update 22C
+## Documentation Update 23A
 
-Completed Configuration Version 1 specification.
+Started comprehensive Security specification.
 
 Added:
-- observability
-- configuration audit
-- performance
-- security
-- scalability
-- architectural constraints
+- purpose
+- responsibilities
+- trust model
+- security domains
+- invariants

@@ -1,63 +1,68 @@
-# Operations Specification (Update 26A)
+# Operations Specification (Update 26B)
 
-## 1. Purpose
+## 7. Monitoring
 
-Operations defines how RadioFactory is operated, monitored and maintained in production.
+Operations continuously monitors:
 
-Operational procedures must be repeatable and auditable.
+- service health
+- resource utilization
+- background workers
+- external dependencies
+- scheduled jobs
 
----
-
-## 2. Responsibilities
-
-Operations is responsible for:
-
-- service monitoring
-- incident handling
-- routine maintenance
-- backup coordination
-- operational reporting
+Monitoring thresholds are explicitly defined.
 
 ---
 
-## 3. Non-Responsibilities
+## 8. Logging
 
-Operations never defines:
+Logs are:
 
-- business rules
-- application architecture
-- domain behavior
-- feature implementation
+- structured
+- timestamped
+- searchable
+- correlated
 
----
-
-## 4. Operational Model
-
-Operational activities are documented and standardized.
-
-Manual actions should be minimized through automation.
+Sensitive information is never logged.
 
 ---
 
-## 5. Operational Environments
+## 9. Alerting
 
-Operational procedures apply consistently across:
+Alerts are classified by severity.
 
-- development
-- testing
-- staging
-- production
+Every alert includes:
 
-Environment-specific settings remain external.
+- source
+- impact
+- correlationId
+- recommended action
 
 ---
 
-## 6. Invariants
+## 10. Backup
 
-Operations must be:
+Backup procedures define:
 
-- reproducible
-- observable
-- documented
-- deterministic
-- recoverable
+- frequency
+- retention
+- verification
+- restoration testing
+
+Backups are validated regularly.
+
+---
+
+## 11. Disaster Recovery
+
+Recovery procedures are documented.
+
+Recovery objectives are measurable and periodically verified.
+
+---
+
+## 12. Operational Runbooks
+
+Common operational tasks use standardized runbooks.
+
+Runbooks are versioned and reviewed regularly.

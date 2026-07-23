@@ -1,12 +1,13 @@
 # CHANGELOG
 
-## Documentation Update 26A
+## Documentation Update 26B
 
-Started comprehensive Operations specification.
+Expanded Operations specification.
 
 Added:
-- purpose
-- responsibilities
-- operational model
-- operational environments
-- invariants
+- monitoring
+- logging
+- alerting
+- backup
+- disaster recovery
+- operational runbooks

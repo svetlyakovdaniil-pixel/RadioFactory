@@ -1,13 +1,13 @@
 # CHANGELOG
 
-## Documentation Update 20B
+## Documentation Update 20C
 
-Expanded Dashboard specification.
+Completed Dashboard Version 1 specification.
 
 Added:
-- screen model
-- user commands
-- real-time updates
-- error handling
-- authorization
-- application interaction
+- observability
+- user audit
+- performance
+- security
+- scalability
+- architectural constraints

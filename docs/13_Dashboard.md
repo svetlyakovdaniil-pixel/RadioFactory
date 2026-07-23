@@ -1,70 +1,67 @@
-# Dashboard Specification (Update 20B)
+# Dashboard Specification (Update 20C)
 
-## 7. Screen Model
+## 13. Observability
 
-Core views:
+Dashboard exposes:
 
-- Overview
-- Stations
-- Broadcasts
-- Workers
-- Logs
-- Diagnostics
+- page load time
+- render latency
+- websocket status
+- command latency
+- synchronization delay
 
-Each screen consumes read models only.
-
----
-
-## 8. User Commands
-
-Supported commands:
-
-- Start Station
-- Stop Station
-- Restart Worker
-- Refresh State
-
-Commands are validated by the application layer.
+Telemetry includes correlationId where applicable.
 
 ---
 
-## 9. Real-Time Updates
+## 14. User Audit
 
-Dashboard subscribes to Event Bus projections.
+Every user command records:
 
-Updates are incremental and ordered.
+- timestamp
+- user
+- role
+- command
+- target
+- correlationId
 
-Disconnected clients automatically resynchronize.
-
----
-
-## 10. Error Handling
-
-Errors are classified:
-
-- validation
-- authorization
-- infrastructure
-- transient
-
-User-facing messages remain implementation-agnostic.
+Audit records are immutable.
 
 ---
 
-## 11. Authorization
+## 15. Performance
 
-Permissions are role-based.
+UI rendering must remain responsive.
 
-UI hides unavailable actions.
+Expensive operations execute asynchronously.
 
-Server remains the source of authorization truth.
+Large datasets are paginated.
 
 ---
 
-## 12. Application Interaction
+## 16. Security
 
-Dashboard never bypasses the application layer.
+Requirements:
 
-All writes are performed through commands.
+- authenticated sessions
+- CSRF protection where applicable
+- secure transport
+- no secrets in browser storage
 
-All reads use query models.
+---
+
+## 17. Scalability
+
+Dashboard supports multiple concurrent operators.
+
+Presentation remains independent from backend implementation.
+
+---
+
+## 18. Architectural Constraints
+
+Dashboard contains no business logic.
+
+All decisions originate in the application/domain layers.
+
+Dashboard Version 1 specification complete.

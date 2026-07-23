@@ -1,12 +1,11 @@
 # CHANGELOG
 
-## Documentation Update 08
+## Documentation Update 09
 
 Added:
-- runtime state model
-- concurrency rules
-- broadcast history
-- recovery audit
-- notification delivery guarantees
+- domain event catalog
+- workspace queue rules
+- command idempotency
+- recovery consistency rules
 
-No architectural behaviour changed.
+No architectural decisions changed.

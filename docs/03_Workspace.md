@@ -1,19 +1,11 @@
-# Workspace (Update 06)
+# Workspace (Update 09)
 
-## Domain Model
+## Queue Rules
 
-Workspace is the root aggregate.
+Workspace owns lifecycle queues.
 
-It owns:
-- Stations
-- global configuration
-- shared media libraries
-- scheduler
-- recovery queue
-
-Workspace never owns runtime state of individual Broadcasts.
-
-## Identity Rules
-
-Workspace ID is immutable.
-Station IDs are unique within a Workspace.
+Rules:
+- FIFO by default.
+- One active lifecycle command per Station.
+- Failed commands never block unrelated Stations.
+- Queue processing is deterministic.

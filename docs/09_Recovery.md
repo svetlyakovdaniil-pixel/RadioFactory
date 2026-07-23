@@ -1,14 +1,9 @@
-# Recovery (Update 08)
+# Recovery (Update 09)
 
-## Recovery Audit
+## Consistency Rules
 
-Every recovery attempt creates an audit record containing:
+Recovery completes only after runtime state, persisted metadata and Broadcast state agree.
 
-- timestamp
-- trigger
-- previous state
-- resulting state
-- duration
-- outcome
+Partial recovery must never be reported as success.
 
-Audit records are immutable and chronological.
+Consistency verification is the final recovery step.

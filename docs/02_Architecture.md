@@ -1,19 +1,18 @@
-# Architecture (Update 07)
+# Architecture (Update 09)
 
-## Domain Commands
+## Domain Event Catalog
 
-All changes enter the system as commands.
-
-Examples:
-- StartStation
-- StopStation
-- ForceStopStation
-- RestartStation
-- ImportMedia
-- ValidateLibrary
-- StartRecovery
+Core events:
+- StationStarted
+- StationStopped
+- BroadcastCreated
+- BroadcastRecovered
+- BroadcastFinished
+- MediaSelected
+- RecoveryFailed
 
 Rules:
-- Commands are immutable.
-- Commands have unique IDs.
-- Commands produce events but never modify UI directly.
+- Events are immutable.
+- Events are timestamped.
+- Events have unique IDs.
+- Events describe facts that already happened.

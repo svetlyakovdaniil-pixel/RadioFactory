@@ -1,24 +1,11 @@
-# Station (Update 08)
+# Station (Update 09)
 
-## Runtime State
+## Command Idempotency
 
-Runtime state exists only while the Station is active.
+Receiving the same lifecycle command twice must not create duplicate side effects.
 
-Persistent state:
-- configuration
-- user intent
-- recovery metadata
+Examples:
+- StartStation while Running -> no-op.
+- StopStation while Idle -> no-op.
 
-Runtime state:
-- current track
-- playback position
-- ffmpeg process
-- current Broadcast reference
-
-After a restart, runtime state is reconstructed rather than trusted blindly.
-
-## Concurrency Rules
-
-Only one lifecycle operation may execute at a time.
-
-Read operations must never block lifecycle transitions.
+Each command returns an explicit result.

@@ -1,9 +1,13 @@
-# Recovery (Update 09)
+# Recovery (Update 10)
 
-## Consistency Rules
+## Error Contract
 
-Recovery completes only after runtime state, persisted metadata and Broadcast state agree.
+Every failure contains:
+- errorCode
+- category
+- severity
+- humanMessage
+- technicalDetails
+- recoverable (true/false)
 
-Partial recovery must never be reported as success.
-
-Consistency verification is the final recovery step.
+User interfaces display humanMessage first.

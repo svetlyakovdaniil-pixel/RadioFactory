@@ -1,18 +1,16 @@
-# Dashboard (Update 04)
+# Dashboard (Update 10)
 
-## Real-time Behaviour
+## Backend Contract
 
-Dashboard displays only confirmed backend state.
+Dashboard never derives business state locally.
 
-Optimistic UI must never claim that a Station is running before Backend confirms it.
+It only renders confirmed backend state.
 
-## Command Feedback
+Every operation returns:
+- requestId
+- status
+- message
+- timestamp
+- optional payload
 
-Each command has four visible phases:
-
-- Accepted
-- Executing
-- Completed
-- Failed
-
-The interface must never leave a command indefinitely in an ambiguous loading state.
+The UI must correlate updates using requestId.

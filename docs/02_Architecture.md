@@ -1,18 +1,12 @@
-# Architecture (Update 09)
+# Architecture (Update 10)
 
-## Domain Event Catalog
+## API Contract Principles
 
-Core events:
-- StationStarted
-- StationStopped
-- BroadcastCreated
-- BroadcastRecovered
-- BroadcastFinished
-- MediaSelected
-- RecoveryFailed
+All communication between components occurs through explicit contracts.
 
 Rules:
-- Events are immutable.
-- Events are timestamped.
-- Events have unique IDs.
-- Events describe facts that already happened.
+- Every request has a correlation ID.
+- Every response references the originating request.
+- APIs are versioned.
+- Unknown fields must be ignored for forward compatibility.
+- Breaking changes require a new API version.

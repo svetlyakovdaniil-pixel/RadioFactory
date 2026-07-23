@@ -1,13 +1,13 @@
-# Notifications (Update 08)
+# Notifications (Update 10)
 
-## Delivery Guarantees
+## Delivery Contract
 
-A notification may be delivered to:
+Each notification includes:
+- notificationId
+- eventId
+- source
+- severity
+- createdAt
+- destination
 
-- Dashboard
-- Telegram
-- Event Log
-
-Failure of one delivery channel must not prevent delivery to the remaining channels.
-
-Duplicate notifications should be avoided using event identifiers.
+Delivery retries must be idempotent.

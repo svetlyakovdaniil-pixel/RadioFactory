@@ -1,11 +1,11 @@
 # CHANGELOG
 
-## Documentation Update 09
+## Documentation Update 10
 
 Added:
-- domain event catalog
-- workspace queue rules
-- command idempotency
-- recovery consistency rules
+- API contract principles
+- dashboard/backend response contract
+- standardized error contract
+- notification delivery contract
 
 No architectural decisions changed.

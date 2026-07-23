@@ -1,55 +1,50 @@
-# Release Management (Update 31B)
+# Release Management (Update 31C)
 
-## 7. Release Planning
+## 13. Release Notes
 
-Each release has:
+Each release includes release notes describing:
 
-- defined scope
-- target version
-- planned timeline
-- identified stakeholders
-
-Release plans are documented before implementation freeze.
+- delivered changes
+- resolved issues
+- known limitations
+- upgrade considerations
 
 ---
 
-## 8. Versioning
+## 14. Post-Release Verification
 
-Every release follows a consistent versioning strategy.
+After deployment, validation confirms that critical functionality operates as expected.
 
-Version identifiers uniquely distinguish released artifacts.
-
----
-
-## 9. Release Readiness
-
-Before publication, a release confirms:
-
-- required testing completed
-- critical defects resolved
-- documentation updated
-- approvals obtained where required
+Any significant issues trigger documented response procedures.
 
 ---
 
-## 10. Release Freeze
+## 15. Release Risk Management
 
-A release freeze limits non-critical changes prior to publication.
+Release risks are identified, assessed and monitored throughout the release lifecycle.
 
-Exceptions require documented approval.
-
----
-
-## 11. Hotfix Releases
-
-Hotfixes address urgent production issues.
-
-They follow an expedited but documented release process.
+Mitigation plans are documented before publication.
 
 ---
 
-## 12. Rollback
+## 16. Release Audit
 
-Rollback procedures are prepared before deployment.
+Release activities are periodically reviewed to verify compliance with the defined release process.
 
-Recovery steps are documented and periodically reviewed.
+Audit outcomes are recorded for continuous improvement.
+
+---
+
+## 17. Continuous Improvement
+
+Release processes evolve through retrospective analysis and documented improvement proposals.
+
+Process changes remain versioned and traceable.
+
+---
+
+## 18. Final Constraints
+
+Release Management defines release governance practices but does not replace architectural, operational or implementation documentation.
+
+Release Management Version 1 specification complete.

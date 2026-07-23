@@ -1,31 +1,14 @@
-# YouTube Channel
+# YouTube Channel (Update 06)
 
-## Назначение
+## Entity Model
 
-Представляет реальный YouTube-канал. Один канал может содержать несколько независимых Station и одновременных LIVE.
+Attributes:
+- ChannelId
+- Name
+- Credentials
+- Stream defaults
+- Upload defaults
 
-## Данные
+A YouTube Channel stores configuration only.
 
-- OAuth;
-- настройки YouTube API;
-- список плейлистов;
-- обязательные параметры публикации.
-
-## Публикация
-
-- видимость: `Доступно всем`;
-- аудитория: `Не для детей`.
-
-## Плейлисты
-
-RadioFactory показывает существующие плейлисты и автоматически создаёт новый по введённому названию, если его ещё нет.
-
-## Не хранится на уровне канала
-
-- общая медиатека всех Station;
-- регион;
-- язык;
-- часовой пояс;
-- значения по умолчанию для новых Station.
-
-Проблема одной Station не должна автоматически останавливать другие Station этого же канала.
+Runtime execution belongs to Station.

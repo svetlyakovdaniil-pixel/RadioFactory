@@ -1,27 +1,20 @@
-# Broadcast (Update 04)
+# Broadcast (Update 06)
 
-## Sequence: Recovery (<3 min)
+## Entity Attributes
 
-```text
-Failure
- │
- ▼
-Recovery detects outage
- │
- ▼
-Same Broadcast valid?
- │
- ├─ No → New Broadcast
- │
- └─ Yes
-      │
-      ▼
-Restore playback position
-      │
-      ▼
-Continue same LIVE
-```
+Required:
 
-## Recovery Invariant
+- BroadcastId
+- StationId
+- YouTubeBroadcastId
+- StartedAt
+- Deadline
+- State
 
-The recovery procedure must never create a second active Broadcast for the same Station.
+Optional:
+
+- EndedAt
+- FailureReason
+- RecoveryHistory
+
+Broadcast identity never changes during its lifetime.

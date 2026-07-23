@@ -1,11 +1,11 @@
 # CHANGELOG
 
-## Documentation Update 05
+## Documentation Update 06
 
 Added:
-- media lifecycle
-- recovery pipeline
-- notification model
-- implementation ordering
+- Workspace entity model
+- YouTube Channel entity model
+- Broadcast attributes
+- technology-independent open questions
 
-No architectural decisions changed.
+No functional behaviour changed.

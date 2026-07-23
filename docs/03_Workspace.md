@@ -1,31 +1,19 @@
-# Workspace
+# Workspace (Update 06)
 
-## Назначение
+## Domain Model
 
-Workspace объединяет всю установку RadioFactory и не является YouTube-каналом или Station.
+Workspace is the root aggregate.
 
-## Обязанности
+It owns:
+- Stations
+- global configuration
+- shared media libraries
+- scheduler
+- recovery queue
 
-- список YouTube-каналов и Station;
-- общий Dashboard;
-- Telegram;
-- диспетчер ресурсов;
-- очередь восстановления;
-- общие системные события;
-- группировка одинаковых аварий.
+Workspace never owns runtime state of individual Broadcasts.
 
-## Общая авария
+## Identity Rules
 
-Если несколько Station затронуты одной общей причиной, Workspace показывает одну глобальную аварию и список затронутых Station.
-
-## Перезагрузка
-
-1. Ручные остановки сохраняются.
-2. Ранее работавшие Station добавляются в очередь.
-3. Запуск идёт последовательно или ограниченными группами.
-4. Следующая Station ждёт безопасного состояния предыдущей.
-5. Ошибка одной Station не останавливает очередь.
-
-## Ресурсы
-
-Workspace защищает работающие LIVE от фоновой нагрузки. Точная модель лимитов CPU, RAM, диска и параллелизма ещё не утверждена.
+Workspace ID is immutable.
+Station IDs are unique within a Workspace.

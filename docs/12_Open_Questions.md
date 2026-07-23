@@ -1,65 +1,13 @@
-# Open Questions
+# Open Questions (Update 06)
 
-Только ещё не принятые решения. После ответа вопрос удаляется, а решение переносится в тематические документы и `Decisions.md`.
+## Deferred Decisions
 
-## Dashboard
+The following implementation details intentionally remain open:
 
-- Карточка Station и полный список статусов.
-- Быстрые и массовые действия.
-- Метрики LIVE.
-- Страница Station и история событий.
+- storage engine
+- ORM choice
+- frontend framework evolution
+- cache implementation
+- message broker
 
-## State Machine
-
-- Полный перечень состояний и переходов.
-- Блокировки операций.
-- Конфликты пользовательских действий.
-
-## Worker
-
-- Один процесс на Station или общий диспетчер.
-- Запуск, heartbeat, зависание и завершение.
-- Граница Worker, Broadcast и Recovery.
-- Обновления без потери LIVE.
-
-## Scheduler and Broadcast
-
-- Настройка длительности.
-- Полный пошаговый запуск.
-- Состав Cleanup.
-- Ошибки завершения старого Broadcast.
-- Ограничения одновременных YouTube LIVE.
-
-## Storage and History
-
-- Структура каталогов.
-- Файлы или база данных.
-- История Broadcast и треков.
-- Срок хранения логов.
-- Backup, restore и миграции данных.
-
-## Resources
-
-- CPU, RAM, диск и резерв места.
-- Параллельные запуски и импорт.
-- Приоритеты Station.
-
-## Notifications
-
-- Полный перечень уровней и событий.
-- Настройки, quiet hours и повторные уведомления.
-
-## Workspace Settings
-
-- Telegram, роли, авторизация, часовой пояс, язык и обновления.
-
-## Backend and API
-
-- Backend, внутренний API, аутентификация, идемпотентность, конкуренция, версии и аудит.
-
-## Migration and Release
-
-- Критерии готовности.
-- Миграция библиотек.
-- Параллельная работа V1/V2.
-- Откат и окончательное переключение.
+These choices must not influence the domain model.

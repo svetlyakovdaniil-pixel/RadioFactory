@@ -1,10 +1,10 @@
 # CHANGELOG
 
-## Documentation Update 45-49
+## Documentation Update 50-54
 
 Completed:
-- Security Governance V1
-- Observability Governance V1
-- Backup Governance V1
-- Incident Governance V1
-- Maintenance Governance V1
+- API Governance V1
+- UI Governance V1
+- Data Governance V1
+- Storage Governance V1
+- Operations Governance V1

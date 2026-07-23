@@ -1,13 +1,12 @@
 # CHANGELOG
 
-## Documentation Update 18C
+## Documentation Update 19A
 
-Completed Event Bus Version 1 specification.
+Started comprehensive Storage specification.
 
 Added:
-- ordering guarantees
-- observability
-- performance
-- security
-- scalability
-- architectural constraints
+- purpose
+- responsibilities
+- repository contract
+- aggregate persistence
+- invariants

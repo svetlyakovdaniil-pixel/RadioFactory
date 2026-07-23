@@ -1,129 +1,92 @@
-# Station Specification (Update 13B)
+# Station Specification (Update 13C)
 
-# 9. Pending LIVE Package
+# 15. Recovery Workflow
 
-Pending LIVE Package is an immutable snapshot describing everything required
-to start exactly one Broadcast.
+Recovery is initiated only after Station determines that automatic restoration is
+allowed by the current UserIntent.
 
-It contains:
+Sequence:
 
-- StationId
-- Target YouTube Channel
-- Selected audio playlist
-- Selected loop video
-- Stream title
-- Description
-- Thumbnail reference
-- Stream key reference
-- Planned start parameters
-- Generated metadata
+1. Detect failure.
+2. Freeze runtime state.
+3. Verify active Broadcast.
+4. Classify failure.
+5. Decide recovery strategy.
+6. Restore playback when applicable.
+7. Publish RecoveryCompleted or StationFailed.
 
-Once created, the package is never modified.
-
-If any element changes, the package is discarded and a new one is built.
+Recovery must never create a second active Broadcast.
 
 ---
 
-# 10. Start Algorithm
+# 16. Workspace Interaction
 
-Normal start sequence:
+Workspace may:
 
-1. Verify UserIntent == Running.
-2. Verify Station is Idle.
-3. Validate media library.
-4. Build Pending LIVE Package.
-5. Reserve Station runtime.
-6. Ask Worker to create YouTube Broadcast.
-7. Wait until stream_ready.
-8. Launch FFmpeg.
-9. Verify encoder health.
-10. Publish StationStarted.
+- request Start;
+- request Stop;
+- enqueue lifecycle commands;
+- provide shared configuration.
 
-If any mandatory step fails,
-the sequence stops immediately and enters recovery or error handling.
+Workspace must never modify Station runtime state directly.
 
 ---
 
-# 11. Worker Interaction
+# 17. Dashboard Interaction
 
-Station never manipulates FFmpeg directly.
+Dashboard is an observer.
 
-Worker responsibilities:
+Dashboard may:
+- send commands through Backend;
+- subscribe to Station events.
 
-- launch encoder;
-- stop encoder;
-- monitor encoder;
-- report status;
-- collect runtime metrics.
-
-Station responsibilities:
-
-- decide WHEN actions happen;
-- validate state;
-- publish events.
+Dashboard must never infer Station state locally.
 
 ---
 
-# 12. Broadcast Interaction
+# 18. Sequence: Normal Stop
 
-Station owns Broadcast lifecycle.
-
-Broadcast never decides:
-
-- when to start;
-- when to stop;
-- which media to use.
-
-Broadcast reports facts.
-
-Station decides actions.
-
----
-
-# 13. Internal Timers
-
-Station maintains logical timers such as:
-
-- startup timeout;
-- stream_ready timeout;
-- health check interval;
-- recovery timeout;
-- graceful stop timeout.
-
-Timer expiration creates domain events.
-
-Timers never execute business logic directly.
+User
+ ↓
+Dashboard
+ ↓
+Backend
+ ↓
+Workspace
+ ↓
+Station
+ ↓
+Worker stops encoder
+ ↓
+Broadcast finalized
+ ↓
+Cleanup
+ ↓
+Idle
 
 ---
 
-# 14. State Transition Rules
+# 19. Forbidden Operations
 
-Idle -> Preparing
+Station must never:
 
-Allowed only when:
-- UserIntent = Running
-- no active Broadcast
+- access another Station's runtime;
+- bypass Cleanup;
+- modify Pending LIVE Package;
+- publish fake events;
+- ignore explicit Stop requests;
+- start a second Broadcast while one is active.
 
-Preparing -> Starting
+---
 
-Allowed only after Pending LIVE Package is complete.
+# 20. Developer Guidelines
 
-Starting -> Running
+When changing Station logic:
 
-Allowed only after encoder verification.
+- preserve all invariants;
+- keep commands idempotent;
+- prefer events over direct coupling;
+- isolate infrastructure from business rules;
+- document every new lifecycle state.
 
-Running -> Stopping
-
-Only user request or planned shutdown.
-
-Stopping -> Cleanup
-
-Always mandatory.
-
-Cleanup -> Idle
-
-Only after runtime resources are released.
-
-No transition may bypass Cleanup after a normal stop.
-
-This document replaces the previous version of 05_Station.md and extends it.
+This file replaces the previous version and extends the Station specification.

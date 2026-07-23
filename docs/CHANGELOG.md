@@ -1,12 +1,12 @@
 # CHANGELOG
 
-## Documentation Update 13B
+## Documentation Update 13C
 
-Expanded Station specification with:
+Expanded Station specification:
 
-- Pending LIVE Package
-- startup algorithm
-- Worker interaction
-- Broadcast interaction
-- internal timers
-- detailed transition rules
+- recovery workflow
+- Workspace interaction
+- Dashboard interaction
+- normal stop sequence
+- forbidden operations
+- developer guidelines

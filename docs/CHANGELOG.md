@@ -1,13 +1,13 @@
 # CHANGELOG
 
-## Documentation Update 34A
+## Documentation Update 34B
 
-Started API Guidelines Version 1.
+Expanded API Guidelines.
 
 Added:
-- purpose
-- responsibilities
-- non-responsibilities
-- scope
-- API principles
-- invariants
+- resource naming
+- request and response structure
+- error handling
+- pagination and filtering
+- idempotency
+- backward compatibility

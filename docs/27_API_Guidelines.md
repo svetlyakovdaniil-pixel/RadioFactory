@@ -1,66 +1,50 @@
-# API Guidelines (Update 34A)
+# API Guidelines (Update 34B)
 
-## 1. Purpose
+## 7. Resource Naming
 
-The API Guidelines define common principles for designing, implementing and evolving APIs across the RadioFactory platform.
+Endpoints use consistent, descriptive resource names.
 
-The objective is consistent, reliable and maintainable interfaces.
-
----
-
-## 2. Responsibilities
-
-This document defines:
-
-- API design principles
-- interface consistency
-- request and response conventions
-- versioning expectations
-- compatibility practices
+Naming conventions remain stable across API versions.
 
 ---
 
-## 3. Non-Responsibilities
+## 8. Request and Response Structure
 
-This document does not define:
+Requests and responses follow a consistent schema.
 
-- business logic
-- implementation details
-- deployment procedures
-- infrastructure architecture
+Optional fields are explicitly documented.
 
 ---
 
-## 4. Scope
+## 9. Error Handling
 
-These guidelines apply to:
+Errors return:
 
-- REST APIs
-- internal service APIs
-- automation interfaces
-- administrative endpoints
-- public integrations where applicable
-
----
-
-## 5. API Principles
-
-API design emphasizes:
-
-- consistency
-- predictability
-- simplicity
-- backward compatibility
-- traceability
+- consistent status codes
+- machine-readable error identifiers
+- human-readable messages
+- traceable request identifiers where applicable
 
 ---
 
-## 6. Invariants
+## 10. Pagination and Filtering
 
-Every API must be:
+Collection endpoints support documented pagination and filtering mechanisms.
 
-- documented
-- versioned
-- reviewable
-- testable
-- maintainable
+Behavior remains predictable across endpoints.
+
+---
+
+## 11. Idempotency
+
+Operations intended to be idempotent behave consistently across repeated requests.
+
+Idempotency requirements are documented.
+
+---
+
+## 12. Backward Compatibility
+
+Breaking API changes require explicit versioning.
+
+Backward compatibility is maintained whenever practical.

@@ -1,11 +1,16 @@
 # CHANGELOG
 
-## Documentation Update 12
+## Documentation Update 13A
 
-Added:
-- aggregate model
-- aggregate root definition
-- domain services
-- media value objects
+Expanded Station specification:
 
-No architectural decisions changed.
+- purpose
+- responsibilities
+- lifecycle
+- persistent/runtime state
+- commands
+- events
+- invariants
+- edge cases
+
+Beginning of full Station specification.

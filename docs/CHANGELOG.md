@@ -1,12 +1,11 @@
 # CHANGELOG
 
-## Documentation Update 02
+## Documentation Update 03
 
-Expanded architecture with:
+Added:
+- component interaction model
+- dependency rules
+- Station ownership rules
+- Dashboard UX principles
 
-- architectural invariants
-- responsibility boundaries
-- forbidden dependencies
-- Station/Broadcast addenda
-
-No new functional decisions introduced.
+No functional behaviour changed.

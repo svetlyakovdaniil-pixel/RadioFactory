@@ -1,35 +1,37 @@
-# Architecture (Update)
+# Architecture (Update 03)
 
-## Responsibility Boundaries
+## Component Interaction
 
-Workspace
-- global coordination
-- resource limits
-- recovery queue
-
-YouTube Channel
-- YouTube integration
-- publication defaults
-
-Station
-- business logic
-- media selection
-- runtime state
-- lifecycle
-
-Broadcast
-- one LIVE session
-
-Worker
-- executes commands
-
+```text
 Dashboard
-- visualizes state
-- never talks directly to FFmpeg
+    │
+    ▼
+ Backend/API
+    │
+    ├─────────────► Workspace
+    │                  │
+    │                  ▼
+    │              Scheduler
+    │                  │
+    ▼                  ▼
+  Station ◄──────── Worker
+    │
+    ▼
+ Broadcast
+```
 
-## Forbidden Dependencies
+## Dependency Rules
 
-Dashboard -> FFmpeg
-Station -> another Station runtime
-Worker -> UI
-Broadcast -> Workspace configuration
+Allowed:
+- Dashboard → Backend/API
+- Backend/API → Workspace
+- Workspace → Station
+- Station → Worker
+- Worker → Broadcast
+
+Forbidden:
+- Dashboard → FFmpeg
+- Dashboard → Filesystem
+- Station → Station
+- Broadcast → Dashboard
+- Worker → UI

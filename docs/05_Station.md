@@ -1,18 +1,20 @@
-# Station Addendum
+# Station (Update 03)
 
-## Station Invariants
+## Lifecycle Responsibilities
 
-A Station:
+Station отвечает только за принятие решений.
 
-- never owns more than one active Broadcast;
-- never starts a new Broadcast before Cleanup finishes;
-- never loses manual stop intent after reboot;
-- never shares runtime state with another Station.
+Она НЕ должна:
+- выполнять HTTP-запросы к интерфейсу;
+- рисовать UI;
+- самостоятельно управлять другими Station.
 
-## Responsibilities
+## State Ownership
 
-Station decides WHAT should happen.
+Только Station владеет:
+- текущим состоянием;
+- активным Broadcast;
+- Pending LIVE Package;
+- пользовательским намерением (Running/Stopped).
 
-Worker decides HOW it is executed.
-
-Dashboard decides HOW it is displayed.
+Никакой другой компонент не должен менять эти данные напрямую.

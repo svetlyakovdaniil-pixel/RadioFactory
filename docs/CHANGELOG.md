@@ -1,13 +1,12 @@
 # CHANGELOG
 
-## Documentation Update 29C
+## Documentation Update 30A
 
-Completed Development Guidelines Version 1 specification.
+Started Testing Strategy Version 1.
 
 Added:
-- technical debt
-- logging and diagnostics
-- secure development
-- definition of done
-- continuous improvement
-- final constraints
+- purpose
+- responsibilities
+- scope
+- testing principles
+- invariants

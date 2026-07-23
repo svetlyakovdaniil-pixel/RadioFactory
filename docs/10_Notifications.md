@@ -1,29 +1,18 @@
-# Notifications
+# Notifications (Update 05)
 
-## Каналы
+## Notification Levels
 
-Dashboard и Telegram.
+INFO
+WARNING
+ERROR
+CRITICAL
 
-## Уровни
+## Rules
 
-Обычные события, предупреждения, критические ошибки Station и глобальные ошибки Workspace. Полный перечень ещё не утверждён.
+Each notification must include:
+- human-readable explanation;
+- affected Station;
+- timestamp;
+- recommended action (when applicable).
 
-## Антиспам
-
-Каждая автоматическая попытка не отправляет отдельное сообщение. После окончательной неудачи приходит одно информативное уведомление.
-
-## Группировка
-
-Одна общая причина для нескольких Station создаёт одно уведомление Workspace со списком Station.
-
-## Ошибка
-
-Пользовательская часть: что произошло, что система сделала, почему не восстановила и что требуется. Техническая часть: код и диагностика.
-
-## Предупреждение
-
-Не останавливает Station, отображается в Dashboard, отправляется в Telegram и содержит рекомендацию.
-
-## Не утверждено
-
-Точные уровни, список событий, настройки, quiet hours, повторные напоминания и ссылки на Dashboard.
+Raw stack traces are not user notifications.

@@ -1,11 +1,11 @@
 # CHANGELOG
 
-## Documentation Update 04
+## Documentation Update 05
 
 Added:
-- Station start sequence
-- Broadcast recovery sequence
-- Event-oriented Station model
-- Dashboard realtime behaviour rules
+- media lifecycle
+- recovery pipeline
+- notification model
+- implementation ordering
 
-No functional decisions changed.
+No architectural decisions changed.

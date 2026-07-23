@@ -1,32 +1,13 @@
-# Development Roadmap
+# Development Roadmap (Update 05)
 
-## Сейчас
+Future implementation should preserve all architectural invariants.
 
-RadioFactory проектируется. Код не пишется до завершения архитектуры.
+Implementation order:
 
-## Переход
+1. Core domain
+2. Runtime engine
+3. Dashboard
+4. Automation
+5. Advanced analytics
 
-YouTubeFactory V1 продолжает работать, не используется для опасной перестройки, архивируется перед переключением и не удаляется сразу.
-
-## Отдельная разработка
-
-RadioFactory создаётся отдельно. Путь на сервере и окончательная структура репозитория ещё не утверждены.
-
-## Возможное переиспользование после ревизии
-
-YouTube API, FFmpeg, broadcast guard, Telegram, дедупликация, metadata, backup и обработка медиа.
-
-## До начала кода закрыть
-
-1. Dashboard.
-2. State Machine.
-3. Worker.
-4. Scheduler.
-5. Хранилище и история.
-6. Ресурсные лимиты.
-7. Backend/API.
-8. Критерии миграции и отката.
-
-## Контрольные точки
-
-После каждых пяти новых решений формируется обновлённый пакет документации для GitHub.
+Features must not bypass domain rules for convenience.

@@ -1,11 +1,11 @@
 # CHANGELOG
 
-## Documentation Update 11
+## Documentation Update 12
 
 Added:
-- provider architecture
-- provider registry
-- YouTube provider boundary
-- extension requirements
+- aggregate model
+- aggregate root definition
+- domain services
+- media value objects
 
 No architectural decisions changed.

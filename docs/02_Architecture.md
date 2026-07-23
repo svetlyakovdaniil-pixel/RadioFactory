@@ -1,17 +1,16 @@
-# Architecture (Update 11)
+# Architecture (Update 12)
 
-## Extension Model
+## Domain Model
 
-External integrations must communicate through provider interfaces.
+The domain is organized around aggregates.
 
-Core domain must never depend on a specific provider implementation.
+Aggregates:
+- Workspace
+- Station
+- Broadcast
+- Media Library
 
-### Provider Categories
-
-- Streaming Provider
-- Video Platform Provider
-- Notification Provider
-- Media Provider
-- Authentication Provider
-
-Providers are replaceable without changing the domain model.
+Rules:
+- Aggregates communicate through commands and events.
+- References between aggregates use IDs.
+- Cross-aggregate transactions are avoided whenever possible.

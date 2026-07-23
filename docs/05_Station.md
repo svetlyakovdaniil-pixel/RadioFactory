@@ -1,11 +1,12 @@
-# Station (Update 09)
+# Station (Update 12)
 
-## Command Idempotency
+## Domain Services
 
-Receiving the same lifecycle command twice must not create duplicate side effects.
+Station delegates infrastructure work to services.
 
 Examples:
-- StartStation while Running -> no-op.
-- StopStation while Idle -> no-op.
+- Stream Service
+- Recovery Service
+- Scheduling Service
 
-Each command returns an explicit result.
+Services execute actions but never own Station state.

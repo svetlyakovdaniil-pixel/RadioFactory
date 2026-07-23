@@ -1,13 +1,12 @@
-# Workspace (Update 11)
+# Workspace (Update 12)
 
-## Provider Registry
+## Aggregate Root
 
-Workspace owns provider registration.
+Workspace is the aggregate root.
 
 Responsibilities:
-- provider discovery
-- provider configuration
-- lifecycle initialization
-- health monitoring
+- own Station collection
+- own shared configuration
+- coordinate global operations
 
-Stations consume provider interfaces rather than concrete implementations.
+Workspace never manipulates internal Station state directly.

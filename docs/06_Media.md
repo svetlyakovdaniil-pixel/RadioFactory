@@ -1,19 +1,13 @@
-# Media (Update 05)
+# Media (Update 12)
 
-## Media Library Model
+## Value Objects
 
-Media objects are immutable once imported.
+Typical immutable value objects:
 
-Runtime metadata (play count, last used, failures) is stored separately.
+- MediaId
+- Duration
+- Checksum
+- FileHash
+- Resolution
 
-## States
-
-- Imported
-- Validated
-- Available
-- Selected
-- Playing
-- Completed
-- Disabled
-
-Media files themselves are never modified by playback.
+Changing any value creates a new object rather than mutating the existing one.

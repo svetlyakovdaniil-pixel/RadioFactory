@@ -1,13 +1,13 @@
 # CHANGELOG
 
-## Documentation Update 37C
+## Documentation Update 38A
 
-Completed Extensibility Framework Version 1.
+Started Platform Constraints Version 1.
 
 Added:
-- extension lifecycle
-- extension audit
-- risk management
-- continuous improvement
-- backward compatibility
-- final constraints
+- purpose
+- responsibilities
+- non-responsibilities
+- scope
+- guiding principles
+- invariants

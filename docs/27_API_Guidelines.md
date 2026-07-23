@@ -1,50 +1,47 @@
-# API Guidelines (Update 34B)
+# API Guidelines (Update 34C)
 
-## 7. Resource Naming
+## 13. API Security
 
-Endpoints use consistent, descriptive resource names.
+APIs require appropriate authentication, authorization and transport security.
 
-Naming conventions remain stable across API versions.
-
----
-
-## 8. Request and Response Structure
-
-Requests and responses follow a consistent schema.
-
-Optional fields are explicitly documented.
+Security requirements are documented and periodically reviewed.
 
 ---
 
-## 9. Error Handling
+## 14. Rate Limiting
 
-Errors return:
+Rate limiting protects services from abuse and excessive consumption.
 
-- consistent status codes
-- machine-readable error identifiers
-- human-readable messages
-- traceable request identifiers where applicable
+Limits are predictable and documented for clients.
 
 ---
 
-## 10. Pagination and Filtering
+## 15. API Lifecycle
 
-Collection endpoints support documented pagination and filtering mechanisms.
+API versions have defined introduction, maintenance and deprecation phases.
 
-Behavior remains predictable across endpoints.
-
----
-
-## 11. Idempotency
-
-Operations intended to be idempotent behave consistently across repeated requests.
-
-Idempotency requirements are documented.
+Deprecation schedules are communicated in advance.
 
 ---
 
-## 12. Backward Compatibility
+## 16. API Audit
 
-Breaking API changes require explicit versioning.
+API implementations are periodically reviewed for consistency, compliance and quality.
 
-Backward compatibility is maintained whenever practical.
+Audit findings are documented and tracked.
+
+---
+
+## 17. Continuous Improvement
+
+API standards evolve through implementation feedback, metrics and documented improvement proposals.
+
+Changes remain versioned and traceable.
+
+---
+
+## 18. Final Constraints
+
+The API Guidelines define interface design standards but do not replace architecture, implementation or operational documentation.
+
+API Guidelines Version 1 specification complete.

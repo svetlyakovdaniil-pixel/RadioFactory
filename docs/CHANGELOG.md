@@ -1,11 +1,11 @@
 # CHANGELOG
 
-## Documentation Update 06
+## Documentation Update 07
 
 Added:
-- Workspace entity model
-- YouTube Channel entity model
-- Broadcast attributes
-- technology-independent open questions
+- command model
+- Station state machine
+- failure classification
+- event-to-notification mapping
 
-No functional behaviour changed.
+No functional decisions changed.

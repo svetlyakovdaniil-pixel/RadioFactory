@@ -1,30 +1,20 @@
-# Station (Update 04)
+# Station (Update 07)
 
-## Command Processing
+## State Machine
 
-Station processes one lifecycle command at a time.
+Idle
+→ Preparing
+→ Starting
+→ Running
+→ Stopping
+→ Cleanup
+→ Idle
 
-If another command arrives:
+Failure paths:
 
-- incompatible command is rejected or queued;
-- compatible read-only operations may continue.
+Preparing → Error
+Starting → Error
+Running → Recovering → Running
+Running → Error
 
-## Ownership
-
-Only Station may transition its lifecycle state.
-
-External components request changes but do not mutate state directly.
-
-## Events
-
-Station emits domain events such as:
-
-- StationStarted
-- BroadcastPrepared
-- BroadcastStarted
-- BroadcastFinished
-- RecoveryStarted
-- RecoveryCompleted
-- StationFailed
-
-Consumers react to events instead of polling Station internals whenever possible.
+No transition may skip Cleanup after a normal stop.

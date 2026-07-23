@@ -1,15 +1,15 @@
-# Recovery (Update 05)
+# Recovery (Update 07)
 
-## Recovery Pipeline
+## Failure Classification
 
-1. Detect failure.
-2. Classify failure.
-3. Determine recoverability.
-4. Restore state if possible.
-5. Report outcome.
+Recoverable:
+- temporary RTMP disconnect
+- temporary network outage
+- transient API failure
 
-## Principles
+Non-recoverable:
+- invalid credentials
+- deleted YouTube resources
+- corrupted media
 
-Recovery always attempts the least destructive action first.
-
-Manual user intent has priority over automatic recovery.
+Each class has its own recovery strategy.

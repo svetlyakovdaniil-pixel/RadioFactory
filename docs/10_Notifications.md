@@ -1,18 +1,13 @@
-# Notifications (Update 05)
+# Notifications (Update 07)
 
-## Notification Levels
+## Event Mapping
 
-INFO
-WARNING
-ERROR
-CRITICAL
+Every visible notification originates from a domain event.
 
-## Rules
+Domain Event
+      ↓
+Notification Builder
+      ↓
+Dashboard / Telegram / Logs
 
-Each notification must include:
-- human-readable explanation;
-- affected Station;
-- timestamp;
-- recommended action (when applicable).
-
-Raw stack traces are not user notifications.
+Notification channels never generate business events.

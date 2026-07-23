@@ -1,62 +1,53 @@
-# Glossary (Update 28A)
+# Glossary (Update 28B)
 
-## 1. Purpose
+## 7. Term Classification
 
-The glossary defines shared terminology used throughout the RadioFactory documentation.
+Terms are classified as:
 
-Each term has a single canonical definition.
+- architectural
+- domain
+- infrastructure
+- operational
+- external
 
----
-
-## 2. Responsibilities
-
-The glossary provides:
-
-- consistent terminology
-- common understanding
-- architectural vocabulary
-- reference definitions
-- documentation consistency
+Classification is explicit.
 
 ---
 
-## 3. Scope
+## 8. Abbreviations
 
-The glossary covers:
+Abbreviations are defined once.
 
-- architectural concepts
-- domain concepts
-- infrastructure terms
-- operational terminology
-- abbreviations
+Every abbreviation references its canonical term.
 
 ---
 
-## 4. Naming Rules
+## 9. Cross References
 
-Each term has:
+Related terms reference each other.
 
-- canonical name
-- definition
-- related terms
-- optional abbreviation
+Circular references are avoided where possible.
 
 ---
 
-## 5. Maintenance
+## 10. Naming Conventions
 
-Terms are versioned.
+Component names remain stable.
 
-Changes follow normal documentation review.
+Names are descriptive and technology-neutral.
 
 ---
 
-## 6. Invariants
+## 11. Documentation Usage
 
-Definitions must be:
+Documentation uses glossary terminology consistently.
 
-- unambiguous
-- consistent
-- reviewable
-- versioned
-- traceable
+Synonyms are avoided unless explicitly documented.
+
+---
+
+## 12. Evolution
+
+New terms require review before adoption.
+
+Deprecated terms remain documented with replacement guidance.

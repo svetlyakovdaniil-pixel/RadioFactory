@@ -1,13 +1,13 @@
 # CHANGELOG
 
-## Documentation Update 28A
+## Documentation Update 28B
 
-Started comprehensive Glossary specification.
+Expanded Glossary specification.
 
 Added:
-- purpose
-- responsibilities
-- scope
-- naming rules
-- maintenance
-- invariants
+- term classification
+- abbreviations
+- cross references
+- naming conventions
+- documentation usage
+- glossary evolution

@@ -1,53 +1,70 @@
-# Dashboard Specification (Update 20A)
+# Dashboard Specification (Update 20B)
 
-## 1. Purpose
+## 7. Screen Model
 
-Dashboard provides the operational interface for RadioFactory.
+Core views:
 
-It visualizes confirmed system state without owning business logic.
+- Overview
+- Stations
+- Broadcasts
+- Workers
+- Logs
+- Diagnostics
 
----
-
-## 2. Responsibilities
-
-- display Station state
-- display Broadcast state
-- display Worker health
-- submit user commands
-- present diagnostics
+Each screen consumes read models only.
 
 ---
 
-## 3. Non-Responsibilities
+## 8. User Commands
 
-Dashboard never:
+Supported commands:
 
-- executes business rules
-- talks directly to providers
-- modifies aggregates
-- stores runtime state
+- Start Station
+- Stop Station
+- Restart Worker
+- Refresh State
 
----
-
-## 4. Data Model
-
-Dashboard consumes read models only.
-
-Write operations are performed through application commands.
+Commands are validated by the application layer.
 
 ---
 
-## 5. Update Model
+## 9. Real-Time Updates
 
-UI reflects confirmed events from the Event Bus.
+Dashboard subscribes to Event Bus projections.
 
-Optimistic state is prohibited unless explicitly marked.
+Updates are incremental and ordered.
+
+Disconnected clients automatically resynchronize.
 
 ---
 
-## 6. Invariants
+## 10. Error Handling
 
-- read-only projections
-- deterministic rendering
-- command/query separation
-- infrastructure independence
+Errors are classified:
+
+- validation
+- authorization
+- infrastructure
+- transient
+
+User-facing messages remain implementation-agnostic.
+
+---
+
+## 11. Authorization
+
+Permissions are role-based.
+
+UI hides unavailable actions.
+
+Server remains the source of authorization truth.
+
+---
+
+## 12. Application Interaction
+
+Dashboard never bypasses the application layer.
+
+All writes are performed through commands.
+
+All reads use query models.

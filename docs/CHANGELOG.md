@@ -1,12 +1,13 @@
 # CHANGELOG
 
-## Documentation Update 20A
+## Documentation Update 20B
 
-Started comprehensive Dashboard specification.
+Expanded Dashboard specification.
 
 Added:
-- purpose
-- responsibilities
-- dashboard data model
-- update model
-- invariants
+- screen model
+- user commands
+- real-time updates
+- error handling
+- authorization
+- application interaction

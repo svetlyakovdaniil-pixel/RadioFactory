@@ -1,10 +1,10 @@
 # CHANGELOG
 
-## Documentation Update 50-54
+## Documentation Update 55-59
 
 Completed:
-- API Governance V1
-- UI Governance V1
-- Data Governance V1
-- Storage Governance V1
-- Operations Governance V1
+- Plugin Governance V1
+- Worker Governance V1
+- Automation Governance V1
+- Logging Governance V1
+- Monitoring Governance V1

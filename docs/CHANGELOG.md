@@ -1,12 +1,14 @@
 # CHANGELOG
 
-## Documentation Update 13D
+## Documentation Update 14A
 
-Completed first full Station specification.
+Started comprehensive Broadcast specification.
 
 Added:
-- timeout matrix
-- logging requirements
-- extended edge cases
-- validation checklist
-- design principles
+- purpose
+- responsibilities
+- lifecycle
+- identity
+- runtime model
+- invariants
+- domain events

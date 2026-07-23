@@ -1,13 +1,13 @@
 # CHANGELOG
 
-## Documentation Update 31C
+## Documentation Update 32A
 
-Completed Release Management Version 1 specification.
+Started Operations Guide Version 1.
 
 Added:
-- release notes
-- post-release verification
-- release risk management
-- release audit
-- continuous improvement
-- final constraints
+- purpose
+- responsibilities
+- non-responsibilities
+- scope
+- operational principles
+- invariants

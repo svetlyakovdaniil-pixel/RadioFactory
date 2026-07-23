@@ -1,13 +1,13 @@
 # CHANGELOG
 
-## Documentation Update 39A
+## Documentation Update 39B
 
-Started Project Glossary Version 1.
+Expanded Project Glossary.
 
 Added:
-- purpose
-- responsibilities
-- non-responsibilities
-- scope
-- terminology principles
-- invariants
+- naming conventions
+- abbreviations
+- architectural vocabulary
+- introducing new terms
+- glossary lifecycle
+- terminology compatibility

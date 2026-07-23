@@ -1,64 +1,47 @@
-# Project Glossary (Update 39A)
+# Project Glossary (Update 39B)
 
-## 1. Purpose
+## 7. Naming Conventions
 
-The Project Glossary establishes a shared vocabulary for all RadioFactory documentation.
+Project terminology follows consistent naming conventions.
 
----
-
-## 2. Responsibilities
-
-This document defines:
-
-- common terminology
-- naming consistency
-- abbreviations
-- architectural vocabulary
-- documentation language
+Preferred terms are documented and reused across all artifacts.
 
 ---
 
-## 3. Non-Responsibilities
+## 8. Abbreviations
 
-This document does not define:
+Approved abbreviations are explicitly defined.
 
-- implementation behavior
-- business logic
-- system architecture
-- development processes
+Undefined abbreviations should not appear in official documentation.
 
 ---
 
-## 4. Scope
+## 9. Architectural Vocabulary
 
-Applies to:
+Architectural terms have precise definitions shared across documentation and implementation.
 
-- documentation
-- source code
-- APIs
-- user interfaces
-- operational procedures
+Terminology remains technology-neutral where practical.
 
 ---
 
-## 5. Terminology Principles
+## 10. Introducing New Terms
 
-Terminology should be:
+New terms require documented definitions, review and approval before adoption.
 
-- unambiguous
-- consistent
-- stable
-- understandable
-- reusable
+Synonyms should be minimized.
 
 ---
 
-## 6. Invariants
+## 11. Glossary Lifecycle
 
-All glossary entries must be:
+Glossary entries evolve through controlled updates.
 
-- documented
-- reviewed
-- versioned
-- maintained
-- traceable
+Deprecated terms remain documented until retirement.
+
+---
+
+## 12. Terminology Compatibility
+
+Changes in terminology preserve readability and continuity across documentation versions.
+
+Breaking terminology changes require migration guidance.

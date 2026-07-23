@@ -1,13 +1,12 @@
 # CHANGELOG
 
-## Documentation Update 24C
+## Documentation Update 25A
 
-Completed Deployment Version 1 specification.
+Started comprehensive Testing specification.
 
 Added:
-- deployment observability
-- release audit
-- performance
-- resilience
-- scalability
-- architectural constraints
+- purpose
+- responsibilities
+- testing strategy
+- test levels
+- invariants

@@ -1,13 +1,12 @@
 # CHANGELOG
 
-## Documentation Update 21C
+## Documentation Update 22A
 
-Completed API Version 1 specification.
+Started comprehensive Configuration specification.
 
 Added:
-- authentication
-- authorization
-- observability
-- rate limiting
-- security
-- architectural constraints
+- purpose
+- responsibilities
+- configuration sources
+- immutable configuration model
+- invariants

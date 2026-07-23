@@ -1,61 +1,56 @@
-# Event Bus Specification (Update 18B)
+# Event Bus Specification (Update 18C)
 
-## 7. Delivery Guarantees
+## 13. Ordering
 
-Supported guarantees:
+Ordering is guaranteed per publisher.
 
-- at-most-once
-- at-least-once
-- exactly-once (logical, via idempotency)
-
-The transport implementation defines the physical guarantee.
+Cross-publisher ordering is undefined unless explicitly coordinated.
 
 ---
 
-## 8. Subscriber Model
+## 14. Observability
 
-Subscribers:
+Required metrics:
 
-- register interest in event types
-- acknowledge completed processing
-- remain isolated from publishers
+- published events
+- delivered events
+- failed deliveries
+- replay count
+- queue depth
+- delivery latency
 
-Subscriber failures never corrupt event payloads.
-
----
-
-## 9. Idempotency
-
-Every event carries a unique eventId.
-
-Consumers must safely ignore duplicate deliveries.
-
-Processing the same event twice must produce the same final state.
+All telemetry includes correlationId.
 
 ---
 
-## 10. Dead Letter Strategy
+## 15. Performance
 
-Events that repeatedly fail processing are moved to a Dead Letter Queue.
+Publishing must be non-blocking for independent subscribers.
 
-Original payload and metadata are preserved.
-
----
-
-## 11. Replay
-
-Replay is supported using immutable stored events.
-
-Replay never changes historical event content.
+Slow consumers must not block unrelated event processing.
 
 ---
 
-## 12. Error Handling
+## 16. Security
 
-Delivery errors are classified as:
+Only trusted publishers may publish events.
 
-- transient
-- permanent
-- configuration
+Payload integrity must be verifiable.
 
-Recovery policy depends on the classification.
+Sensitive fields are protected from unauthorized consumers.
+
+---
+
+## 17. Scalability
+
+Multiple Event Bus implementations may exist.
+
+Domain contracts remain unchanged regardless of transport technology.
+
+---
+
+## 18. Architectural Constraints
+
+Business logic never depends on the messaging implementation.
+
+Event Bus Version 1 specification complete.

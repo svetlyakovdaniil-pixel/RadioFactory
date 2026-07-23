@@ -1,13 +1,13 @@
 # CHANGELOG
 
-## Documentation Update 18B
+## Documentation Update 18C
 
-Expanded Event Bus specification.
+Completed Event Bus Version 1 specification.
 
 Added:
-- delivery guarantees
-- subscriber model
-- idempotency
-- dead letter strategy
-- replay
-- error handling
+- ordering guarantees
+- observability
+- performance
+- security
+- scalability
+- architectural constraints

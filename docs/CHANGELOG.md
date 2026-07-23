@@ -1,13 +1,13 @@
 # CHANGELOG
 
-## Documentation Update 28B
+## Documentation Update 28C
 
-Expanded Glossary specification.
+Completed Glossary Version 1 specification.
 
 Added:
-- term classification
-- abbreviations
-- cross references
-- naming conventions
-- documentation usage
-- glossary evolution
+- glossary audit
+- change management
+- definition quality
+- scalability
+- governance
+- architectural constraints

@@ -1,53 +1,57 @@
-# Glossary (Update 28B)
+# Glossary (Update 28C)
 
-## 7. Term Classification
+## 13. Glossary Audit
 
-Terms are classified as:
+Terminology is reviewed periodically to ensure consistency across all documentation.
 
-- architectural
-- domain
-- infrastructure
-- operational
-- external
-
-Classification is explicit.
+Audit findings are documented and traceable.
 
 ---
 
-## 8. Abbreviations
+## 14. Change Management
 
-Abbreviations are defined once.
+Glossary updates follow the documentation review process.
 
-Every abbreviation references its canonical term.
+Every terminology change records:
 
----
-
-## 9. Cross References
-
-Related terms reference each other.
-
-Circular references are avoided where possible.
+- rationale
+- affected documents
+- replacement terms
+- review history
 
 ---
 
-## 10. Naming Conventions
+## 15. Definition Quality
 
-Component names remain stable.
+Definitions must be:
 
-Names are descriptive and technology-neutral.
+- concise
+- precise
+- implementation-neutral
+- internally consistent
 
----
-
-## 11. Documentation Usage
-
-Documentation uses glossary terminology consistently.
-
-Synonyms are avoided unless explicitly documented.
+Ambiguous definitions are rejected.
 
 ---
 
-## 12. Evolution
+## 16. Scalability
 
-New terms require review before adoption.
+The glossary supports continued project growth.
 
-Deprecated terms remain documented with replacement guidance.
+New domains may extend the glossary without changing existing canonical definitions.
+
+---
+
+## 17. Governance
+
+Glossary ownership is explicitly assigned.
+
+Review responsibilities are documented.
+
+---
+
+## 18. Architectural Constraints
+
+The glossary standardizes terminology but never replaces architectural specifications.
+
+Glossary Version 1 specification complete.

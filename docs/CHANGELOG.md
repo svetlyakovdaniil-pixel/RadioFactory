@@ -1,12 +1,13 @@
 # CHANGELOG
 
-## Documentation Update 19A
+## Documentation Update 19B
 
-Started comprehensive Storage specification.
+Expanded Storage specification.
 
 Added:
-- purpose
-- responsibilities
-- repository contract
-- aggregate persistence
-- invariants
+- transaction model
+- concurrency
+- failure recovery
+- schema migrations
+- backup and restore
+- repository rules

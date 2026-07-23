@@ -1,53 +1,63 @@
-# Storage Specification (Update 19A)
+# Storage Specification (Update 19B)
 
-## 1. Purpose
+## 7. Transaction Model
 
-Storage persists domain state independently of runtime.
+Transactions guarantee atomic aggregate updates.
 
-Business logic never depends on a specific database technology.
+Rules:
 
----
+- begin
+- validate
+- commit
+- rollback
 
-## 2. Responsibilities
-
-- persist aggregates
-- load aggregates
-- maintain consistency
-- support transactions
-- preserve audit history
+Nested business transactions are prohibited unless explicitly supported.
 
 ---
 
-## 3. Non-Responsibilities
+## 8. Concurrency
 
-Storage never:
+Supported strategies:
 
-- executes business rules
-- calls external services
-- publishes events
-- controls lifecycle
+- optimistic concurrency
+- pessimistic locking
 
----
-
-## 4. Repository Contract
-
-Repositories expose aggregate-oriented operations only.
-
-Infrastructure entities never leak into the domain.
+Conflict detection is deterministic.
 
 ---
 
-## 5. Aggregate Persistence
+## 9. Failure Recovery
 
-Each aggregate is persisted atomically.
+After failures Storage guarantees:
 
-Partial aggregate updates are prohibited unless explicitly defined.
+- committed data remains committed
+- rolled back data remains invisible
+- partial writes are rejected
 
 ---
 
-## 6. Invariants
+## 10. Schema Migrations
 
-- aggregate consistency
-- deterministic persistence
-- stable identifiers
-- infrastructure isolation
+Schema evolution is versioned.
+
+Every migration is repeatable, auditable and reversible when possible.
+
+---
+
+## 11. Backup and Restore
+
+Backups preserve:
+
+- aggregate state
+- audit history
+- schema version
+
+Restore validates consistency before activation.
+
+---
+
+## 12. Repository Rules
+
+Repositories expose domain aggregates only.
+
+Infrastructure details never cross repository boundaries.

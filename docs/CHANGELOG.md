@@ -1,13 +1,13 @@
 # CHANGELOG
 
-## Documentation Update 31A
+## Documentation Update 31B
 
-Started Release Management Version 1.
+Expanded Release Management specification.
 
 Added:
-- purpose
-- responsibilities
-- non-responsibilities
-- scope
-- release principles
-- invariants
+- release planning
+- versioning
+- release readiness
+- release freeze
+- hotfix releases
+- rollback procedures

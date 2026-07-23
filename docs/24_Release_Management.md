@@ -1,66 +1,55 @@
-# Release Management (Update 31A)
+# Release Management (Update 31B)
 
-## 1. Purpose
+## 7. Release Planning
 
-Release Management defines the principles for preparing, validating and publishing RadioFactory releases.
+Each release has:
 
-Its objective is to deliver predictable, stable and traceable software releases.
+- defined scope
+- target version
+- planned timeline
+- identified stakeholders
 
----
-
-## 2. Responsibilities
-
-This document defines:
-
-- release lifecycle
-- release planning
-- release readiness
-- publication process
-- post-release activities
+Release plans are documented before implementation freeze.
 
 ---
 
-## 3. Non-Responsibilities
+## 8. Versioning
 
-Release Management does not define:
+Every release follows a consistent versioning strategy.
 
-- implementation details
-- software architecture
-- operational monitoring
-- feature specifications
+Version identifiers uniquely distinguish released artifacts.
 
 ---
 
-## 4. Scope
+## 9. Release Readiness
 
-The release process applies to:
+Before publication, a release confirms:
 
-- backend services
-- frontend applications
-- infrastructure
-- automation
-- documentation releases
-
----
-
-## 5. Principles
-
-Release management emphasizes:
-
-- predictability
-- repeatability
-- traceability
-- quality
-- controlled risk
+- required testing completed
+- critical defects resolved
+- documentation updated
+- approvals obtained where required
 
 ---
 
-## 6. Invariants
+## 10. Release Freeze
 
-Every release must be:
+A release freeze limits non-critical changes prior to publication.
 
-- versioned
-- documented
-- reviewable
-- reproducible
-- traceable
+Exceptions require documented approval.
+
+---
+
+## 11. Hotfix Releases
+
+Hotfixes address urgent production issues.
+
+They follow an expedited but documented release process.
+
+---
+
+## 12. Rollback
+
+Rollback procedures are prepared before deployment.
+
+Recovery steps are documented and periodically reviewed.

@@ -1,11 +1,13 @@
-# Workspace (Update 09)
+# Workspace (Update 11)
 
-## Queue Rules
+## Provider Registry
 
-Workspace owns lifecycle queues.
+Workspace owns provider registration.
 
-Rules:
-- FIFO by default.
-- One active lifecycle command per Station.
-- Failed commands never block unrelated Stations.
-- Queue processing is deterministic.
+Responsibilities:
+- provider discovery
+- provider configuration
+- lifecycle initialization
+- health monitoring
+
+Stations consume provider interfaces rather than concrete implementations.

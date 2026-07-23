@@ -1,11 +1,11 @@
 # CHANGELOG
 
-## Documentation Update 10
+## Documentation Update 11
 
 Added:
-- API contract principles
-- dashboard/backend response contract
-- standardized error contract
-- notification delivery contract
+- provider architecture
+- provider registry
+- YouTube provider boundary
+- extension requirements
 
 No architectural decisions changed.

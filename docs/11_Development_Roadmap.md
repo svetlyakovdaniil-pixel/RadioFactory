@@ -1,13 +1,12 @@
-# Development Roadmap (Update 05)
+# Development Roadmap (Update 11)
 
-Future implementation should preserve all architectural invariants.
+## Extension Requirements
 
-Implementation order:
+Every new provider must:
 
-1. Core domain
-2. Runtime engine
-3. Dashboard
-4. Automation
-5. Advanced analytics
+- implement the required interface;
+- publish standard domain events;
+- respect recovery rules;
+- support structured error contracts.
 
-Features must not bypass domain rules for convenience.
+Core architecture should not require modification when adding a provider.

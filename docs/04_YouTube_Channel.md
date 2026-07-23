@@ -1,14 +1,9 @@
-# YouTube Channel (Update 06)
+# YouTube Channel (Update 11)
 
-## Entity Model
+## Provider Boundary
 
-Attributes:
-- ChannelId
-- Name
-- Credentials
-- Stream defaults
-- Upload defaults
+YouTube-specific behavior is isolated behind the Video Platform Provider interface.
 
-A YouTube Channel stores configuration only.
+Domain objects do not depend on YouTube API models.
 
-Runtime execution belongs to Station.
+Provider adapters translate between external APIs and domain entities.

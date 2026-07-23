@@ -1,13 +1,13 @@
 # CHANGELOG
 
-## Documentation Update 30C
+## Documentation Update 31A
 
-Completed Testing Strategy Version 1 specification.
+Started Release Management Version 1.
 
 Added:
-- test quality
-- defect management
-- risk-based testing
-- continuous verification
-- testing audit
-- final constraints
+- purpose
+- responsibilities
+- non-responsibilities
+- scope
+- release principles
+- invariants
